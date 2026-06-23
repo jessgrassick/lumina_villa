@@ -1,0 +1,884 @@
+{
+  "meta": {
+    "target_domain": "elitehavens.com",
+    "analysis_date": "2026-06-10",
+    "note": "Legacy .htm URLs now 404 on Elite Havens site. Analysis uses confirmed live URLs from SERP.",
+    "original_requested_urls": [
+      "https://www.elitehavens.com/bali/canggu-villas.htm",
+      "https://www.elitehavens.com/bali-villas.htm",
+      "https://www.elitehavens.com/"
+    ],
+    "live_urls_used": [
+      "https://www.elitehavens.com/canggu-luxury-villas/bali-indonesia-villas/",
+      "https://www.elitehavens.com/bali-rental-villas/indonesia-villas/",
+      "https://www.elitehavens.com/"
+    ],
+    "ranked_keywords_sampled": 500,
+    "unique_ranking_urls_found": 115
+  },
+  "page_analyses": [
+    {
+      "url": "https://www.elitehavens.com/canggu-luxury-villas/bali-indonesia-villas/",
+      "analysis": {
+        "url": "https://www.elitehavens.com/canggu-luxury-villas/bali-indonesia-villas/",
+        "status_code": 200,
+        "title": "Canggu Luxury Villas - Elite Havens",
+        "meta_description": "Too-good-to-be-true private pool villas in Canggu,Bali for short-term rental. Stunning tropical gardens and luxury accommodation. 5-Star service and 24/7 security.",
+        "h1": [
+          "Canggu Luxury Villas"
+        ],
+        "h2": [
+          "Villa Canggu North",
+          "Dea Villas - Villa Amy",
+          "Villa Luwih",
+          "Villa Canggu South",
+          "Dea Villas - Villa Sati",
+          "Villa Indrani",
+          "Dea Villas - Villa Sarasvati",
+          "Villa Asante",
+          "Arnalaya Beach House",
+          "Villa Zelie",
+          "Dea Villas - Villa Radha",
+          "Villa Avalon",
+          "Avalon I",
+          "Villa Kalyani",
+          "Villa Nica",
+          "Villa Kedidi",
+          "The Iman Villa",
+          "Villa Mana",
+          "Villa Nini Elly",
+          "Villa Norbu",
+          "Villa Simona Oasis",
+          "Villa Kakatua",
+          "The Iman Villa",
+          "Villa Mana",
+          "Villa Kalyani",
+          "Villa Simona Oasis",
+          "Avalon II",
+          "Avalon III",
+          "Bendega Rato",
+          "Bendega Nui",
+          "Sungai Tinggi Beach Villa",
+          "Villa Asante",
+          "Villa Luwih",
+          "Sungai Tinggi Beach Villa",
+          "Villa Avalon",
+          "Bendega Rato",
+          "Dea Villas",
+          "Dea Villas",
+          "Bendega Nui",
+          "Villa Canggu",
+          "Bendega Villas",
+          "Villa Indrani",
+          "Dea Villas",
+          "Dea Villas",
+          "Dea Villas",
+          "Villa Zelie",
+          "Villa Avalon",
+          "Bendega Villas",
+          "Dea Villas",
+          "Need more inspiration?"
+        ],
+        "h3": [
+          "Filters",
+          "Contact Us",
+          "Read our reviews",
+          "Our Signature Collection",
+          "Contact us",
+          "About us",
+          "Booking enquiries",
+          "Get in touch",
+          "Connect with us"
+        ],
+        "word_count": 1684,
+        "internal_links_count": 98,
+        "schema_types": [],
+        "structured_data_summary": [],
+        "canonical": "https://www.elitehavens.com/canggu-luxury-villas/bali-indonesia-villas/",
+        "meta_keywords": null,
+        "images_count": 15,
+        "onpage_score": 97.07,
+        "has_micromarkup": false,
+        "has_micromarkup_errors": false
+      }
+    },
+    {
+      "url": "https://www.elitehavens.com/bali-rental-villas/indonesia-villas/",
+      "analysis": {
+        "url": "https://www.elitehavens.com/bali-rental-villas/indonesia-villas/",
+        "status_code": 200,
+        "title": "Bali Luxury Villas - Elite Havens",
+        "meta_description": "These luxury Bali villas are the have-it-all holiday accommodation for families and friends. Each staffed private rental boasts exhaustive services and amenities.",
+        "h1": [
+          "Bali Luxury Villas"
+        ],
+        "h2": [
+          "Villa Canggu North",
+          "Villa Luwih",
+          "Dea Villas - Villa Sarasvati",
+          "Villa Semarapura",
+          "Dea Villas - Villa Sati",
+          "Villa Unna",
+          "Villa Avalon",
+          "Villa Asante",
+          "Villa Adenium",
+          "Dea Villas - Villa Radha",
+          "Villa Asada",
+          "Villa Mandalay Dua",
+          "Villa Indrani",
+          "Villa Asta",
+          "Villa Atas Ombak",
+          "Des Indes I",
+          "Arnalaya Beach House",
+          "Villa Canggu South",
+          "Villa Aiko",
+          "Dea Villas - Villa Amy",
+          "Casa Evaliza",
+          "Villa Zelie",
+          "Des Indes II",
+          "Villa Cemara",
+          "Kaba Kaba Estate",
+          "Villa Tirta Nila",
+          "The Ylang Ylang",
+          "Kiss Bali Beach Residence",
+          "Villa Adasa",
+          "The Layar - one bedroom villa",
+          "Grand Cliff Ungasan",
+          "Avalon I",
+          "Villa Simona Oasis",
+          "The Iman Villa",
+          "Villa Windu Asri",
+          "Villa Kedidi",
+          "Villa Kakatua",
+          "Villa Puri Nirwana",
+          "Villa Kailasha",
+          "Villa Nini Elly",
+          "Villa Lilibel",
+          "The Pala Ubud",
+          "Noku Beach House",
+          "Villa Tanju",
+          "Villa Samadhana",
+          "Villa Bie",
+          "Villa Kalyani",
+          "Villa Sol Y Mar",
+          "Villa Nica",
+          "Villa Lulito",
+          "Villa 1880",
+          "The Shanti Residence",
+          "Grand Cliff Nusa Dua",
+          "Sayang d'Amour",
+          "Villa Svarga",
+          "Villa LeGa",
+          "Taman Ahimsa",
+          "Villa Alamanda",
+          "Villa Mana",
+          "Villa Norbu",
+          "Villa San",
+          "The Pala Ubud - Villa Seraya A",
+          "Pandawa Cliff Estate - Villa Rose",
+          "Kiss Bali Beach Residence",
+          "Villa Kailasha",
+          "Villa Kailasha",
+          "Bayu Gita Beach Front",
+          "The Ylang Ylang",
+          "Grand Cliff Ungasan",
+          "Villa Simona Oasis",
+          "Villa Emmy",
+          "Villa Mana",
+          "Villa Kailasha",
+          "Villa 1880",
+          "Villa Kalyani",
+          "Villa Puri Nirwana",
+          "Sayang d'Amour",
+          "Villa Kailasha",
+          "The Iman Villa",
+          "Kiss Bali Beach Residence",
+          "Villa San",
+          "Villa Kailasha",
+          "Grand Cliff Nusa Dua",
+          "Kaba Kaba Estate",
+          "Villa Sol Y Mar",
+          "Bendega Rato",
+          "The Pala Ubud - Villa Catur",
+          "Avalon II",
+          "The Pala Ubud - Villa Seraya B",
+          "The Layar - two bedroom villa",
+          "The Layar - four bedroom villa",
+          "The Layar - three bedroom villa",
+          "Villa Hamsa",
+          "Seseh Beach Villa II",
+          "Tirtha Bayu Estate - Villa II",
+          "Tirtha Bayu Estate - Villa I",
+          "The Pala Ubud - Villa Batur",
+          "Villa Windu Sari",
+          "Pandawa Cliff Estate - Villa Marie",
+          "Pandawa Cliff Estate - Villa Markisa",
+          "Pandawa Cliff Estate - The Pala",
+          "Villa Soham",
+          "The Pala Ubud - Villa Agung",
+          "The Pala Ubud - Villa Sanghyang",
+          "Seseh Beach Villa I",
+          "Villa Mandalay",
+          "Bendega Nui",
+          "Sungai Tinggi Beach Villa",
+          "Bayu Gita Residence",
+          "Avalon III",
+          "Villa Luwih",
+          "Des Indes II",
+          "Villa Asta",
+          "Villa Avalon",
+          "Villa Hamsa",
+          "Villa Zelie",
+          "Sungai Tinggi Beach Villa",
+          "Villa Asada",
+          "Villa Asante",
+          "Seseh Beach Villa I",
+          "The Pala Ubud - Villa Seraya B",
+          "Bendega Nui",
+          "Villa Windu Sari",
+          "Villa Asta",
+          "Dea Villas",
+          "Pandawa Cliff Estate",
+          "Pandawa Cliff Estate",
+          "Des Indes Villas",
+          "Villa Indrani",
+          "Seseh Beach Villas",
+          "Bendega Villas",
+          "Pandawa Cliff Estate",
+          "Seseh Beach Villa II",
+          "Seseh Beach Villa II",
+          "Pandawa Cliff Estate - The Pala",
+          "Pandawa Cliff Estate",
+          "Sohamsa Ocean Estate",
+          "Pandawa Cliff Estate",
+          "Pandawa Cliff Estate",
+          "The Pala Ubud - Villa Seraya A",
+          "Villa Avalon",
+          "Dea Villas",
+          "Dea Villas",
+          "Dea Villas",
+          "Villa Canggu",
+          "The Pala Ubud - Villa Batur",
+          "Bendega Villas",
+          "Sohamsa Ocean Estate",
+          "Pandawa Cliff Estate",
+          "Pandawa Cliff Estate",
+          "Mandalay Villas",
+          "Bendega Rato",
+          "Dea Villas",
+          "Dea Villas",
+          "Des Indes II",
+          "Villa Mandalay",
+          "Pandawa Cliff Estate",
+          "Tirtha Bayu Estate",
+          "Pandawa Cliff Estate",
+          "Mandalay Villas",
+          "Pandawa Cliff Estate",
+          "Seseh Beach Villas",
+          "Seseh Beach Villas",
+          "Bayu Gita",
+          "Need more inspiration?"
+        ],
+        "h3": [
+          "Filters",
+          "Contact Us",
+          "Read our reviews",
+          "Our Signature Collection",
+          "Contact us",
+          "About us",
+          "Booking enquiries",
+          "Get in touch",
+          "Connect with us"
+        ],
+        "word_count": 3561,
+        "internal_links_count": 193,
+        "schema_types": [],
+        "structured_data_summary": [],
+        "canonical": "https://www.elitehavens.com/bali-rental-villas/indonesia-villas/",
+        "meta_keywords": null,
+        "images_count": 15,
+        "onpage_score": 95.98,
+        "has_micromarkup": false,
+        "has_micromarkup_errors": false
+      }
+    },
+    {
+      "url": "https://www.elitehavens.com/",
+      "analysis": {
+        "url": "https://www.elitehavens.com/",
+        "status_code": 200,
+        "title": "Luxury Villa Rentals in Asia - Elite Havens",
+        "meta_description": "Discover the finest luxury villas for rent in Asia's top destinations. Experience unrivaled service and total privacy. Explore our collection and book today!",
+        "h1": [
+          "LIFE.\n MADE OF MOMENTS LIKE THIS."
+        ],
+        "h2": [
+          "Hand-picked by Elite Havens",
+          "Promotions",
+          "Your journey to total freedom starts here",
+          "Be Inspired",
+          "THE ELITE HAVENS DIFFERENCE",
+          "The Elite Magazine"
+        ],
+        "h3": [
+          "Havens aren’t places to shelter from the world.\nThey’re places to embrace it.",
+          "Baan Paa Talee Estate",
+          "Baan Surin Sawan",
+          "Casa Alma",
+          "Casa Evaliza",
+          "Dea Villas",
+          "Dea Villas - Villa Amy",
+          "Dea Villas - Villa Radha",
+          "Dea Villas - Villa Sarasvati",
+          "Dea Villas - Villa Sati",
+          "Des Indes I",
+          "Des Indes II",
+          "Infinity View",
+          "Laguna Waters",
+          "Malaiwana - Villa Rodnaya",
+          "Veyla Natai Residences - Sea Villa",
+          "Villa Abiente",
+          "Villa Aiko",
+          "Villa Asada",
+          "Villa Asante",
+          "Villa Semarapura",
+          "Villa Waimarie",
+          "Villa Zelie",
+          "Extraordinary Villa Deals",
+          "Plan Perfection",
+          "Discover Paradise",
+          "Layers of Luxury Only at The Layar",
+          "Tranquil Summer in Hokkaido",
+          "Timeless Thailand",
+          "Golden Week, Redefined",
+          "Dive into Bali",
+          "Bali",
+          "Lombok",
+          "Nusa Lembongan",
+          "Phuket",
+          "Koh Samui",
+          "Maldives",
+          "Japan",
+          "India",
+          "Dining",
+          "Personal Concierge",
+          "Local",
+          "Book Direct",
+          "10 Best Family-Friendly Villas in Phuket",
+          "8 Reasons Why November is the Perfect Time to Visit Niseko",
+          "Lombok Adventure: Top 5 Things To Do",
+          "How to Reach Goa: Handy Guide",
+          "Head to Canggu: Bali’s Hottest New Destination",
+          "Extraordinary experiences, right to your inbox.",
+          "About us",
+          "Booking enquiries",
+          "Get in touch",
+          "Connect with us"
+        ],
+        "word_count": 1993,
+        "internal_links_count": 92,
+        "schema_types": [],
+        "structured_data_summary": [],
+        "canonical": "https://www.elitehavens.com/",
+        "meta_keywords": null,
+        "images_count": 9,
+        "onpage_score": 100,
+        "has_micromarkup": false,
+        "has_micromarkup_errors": false
+      }
+    }
+  ],
+  "url_patterns": {
+    "magazine/editorial": {
+      "count": 43,
+      "sample_urls": [
+        "https://www.elitehavens.com/magazine/chocolate-heaven-in-bali/",
+        "https://www.elitehavens.com/magazine/where-to-shop-in-bali-fabulous-fashion-hub/",
+        "https://www.elitehavens.com/magazine/before-you-go-7-everyday-symbols-of-bali-you-need-to-know/",
+        "https://www.elitehavens.com/magazine/wear-balinese-wedding/",
+        "https://www.elitehavens.com/magazine/best-shopping-in-seminyak-hand-picked-by-noku-beach-house/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "wallace's line",
+          "sv": 1600,
+          "pos": 7
+        },
+        {
+          "kw": "tabanan bali",
+          "sv": 880,
+          "pos": 6
+        },
+        {
+          "kw": "bali november",
+          "sv": 720,
+          "pos": 4
+        }
+      ]
+    },
+    "villa-listing (individual)": {
+      "count": 17,
+      "sample_urls": [
+        "https://www.elitehavens.com/noku-beach-house-villa/seminyak-bali-indonesia.aspx",
+        "https://www.elitehavens.com/the-shanti-residence-villa/nusa-dua-bali-indonesia.aspx",
+        "https://www.elitehavens.com/villa-norbu-villa/canggu-bali-indonesia.aspx",
+        "https://www.elitehavens.com/sayang-d-amour-villa/seminyak-bali-indonesia.aspx",
+        "https://www.elitehavens.com/villa-avalon-villa/canggu-bali-indonesia.aspx"
+      ],
+      "top_keywords": [
+        {
+          "kw": "seseh beach villa",
+          "sv": 1000,
+          "pos": 6
+        },
+        {
+          "kw": "noku beach house",
+          "sv": 320,
+          "pos": 1
+        },
+        {
+          "kw": "villa atas ombak",
+          "sv": 140,
+          "pos": 2
+        }
+      ]
+    },
+    "bali-filter/facet pages": {
+      "count": 9,
+      "sample_urls": [
+        "https://www.elitehavens.com/bali-rental-4bedroom-villas/",
+        "https://www.elitehavens.com/bali-rental-eh_beachfront-holiday-villas/",
+        "https://www.elitehavens.com/bali-rental-villas/indonesia-villas/",
+        "https://www.elitehavens.com/bali-rental-eh_partyplace-holiday-villas/",
+        "https://www.elitehavens.com/bali-rental-1bedroom-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "bali 4-bedroom villas",
+          "sv": 480,
+          "pos": 1
+        },
+        {
+          "kw": "bali beachfront villas",
+          "sv": 390,
+          "pos": 2
+        },
+        {
+          "kw": "best villa bali",
+          "sv": 390,
+          "pos": 4
+        }
+      ]
+    },
+    "area-hub: phuket/thailand": {
+      "count": 9,
+      "sample_urls": [
+        "https://www.elitehavens.com/thailand-private-eh_beachfront-holiday-villas/",
+        "https://www.elitehavens.com/phuket-rental-villas/thailand-villas/",
+        "https://www.elitehavens.com/phuket-rental-eh_privatepool-holiday-villas/",
+        "https://www.elitehavens.com/thailand-private-eh_privatepool-holiday-villas/",
+        "https://www.elitehavens.com/thailand-private-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "phuket villas with private pool",
+          "sv": 320,
+          "pos": 1
+        },
+        {
+          "kw": "private pool villa in thailand",
+          "sv": 170,
+          "pos": 3
+        },
+        {
+          "kw": "private villa thailand",
+          "sv": 140,
+          "pos": 4
+        }
+      ]
+    },
+    "villa-listing (estate)": {
+      "count": 6,
+      "sample_urls": [
+        "https://www.elitehavens.com/laksmana-estate-villa-adasa-villa/seminyak-bali-indonesia.aspx",
+        "https://www.elitehavens.com/pandawa-cliff-estate-villa/the-bukit-bali-indonesia.aspx",
+        "https://www.elitehavens.com/sohamsa-ocean-estate-villa/the-bukit-bali-indonesia.aspx",
+        "https://www.elitehavens.com/mandalay-villas-villa/sesehtanah-lot-bali-indonesia.aspx",
+        "https://www.elitehavens.com/laksmana-estate-villa-adasa-villa/seminyak-bali-indonesia/gallery78907.aspx"
+      ],
+      "top_keywords": [
+        {
+          "kw": "pandawa cliff estate wedding",
+          "sv": 90,
+          "pos": 2
+        },
+        {
+          "kw": "windu sari",
+          "sv": 90,
+          "pos": 4
+        },
+        {
+          "kw": "villa adasa seminyak",
+          "sv": 50,
+          "pos": 1
+        }
+      ]
+    },
+    "area-hub: seminyak": {
+      "count": 5,
+      "sample_urls": [
+        "https://www.elitehavens.com/seminyak-luxury-4bedroom-villas/",
+        "https://www.elitehavens.com/seminyak-luxury-eh_beachfront-holiday-villas/",
+        "https://www.elitehavens.com/seminyak-luxury-eh_family-holiday-villas/",
+        "https://www.elitehavens.com/seminyak-luxury-villas/bali-indonesia-villas/",
+        "https://www.elitehavens.com/seminyak-luxury-3bedroom-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "4 bedroom seminyak villas",
+          "sv": 480,
+          "pos": 1
+        },
+        {
+          "kw": "luxury seminyak villas",
+          "sv": 480,
+          "pos": 1
+        },
+        {
+          "kw": "3 bedrooms villa in seminyak",
+          "sv": 260,
+          "pos": 7
+        }
+      ]
+    },
+    "area-hub: canggu": {
+      "count": 4,
+      "sample_urls": [
+        "https://www.elitehavens.com/canggu-luxury-villas/bali-indonesia-villas/",
+        "https://www.elitehavens.com/canggu-luxury-eh_privatepool-holiday-villas/",
+        "https://www.elitehavens.com/canggu-luxury-eh_partyplace-holiday-villas/",
+        "https://www.elitehavens.com/canggu-luxury-eh_beachfront-holiday-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "canggu luxury villas",
+          "sv": 140,
+          "pos": 2
+        },
+        {
+          "kw": "canggu beach villas",
+          "sv": 90,
+          "pos": 5
+        },
+        {
+          "kw": "canggu villa private pool",
+          "sv": 70,
+          "pos": 4
+        }
+      ]
+    },
+    "area-hub: lombok": {
+      "count": 3,
+      "sample_urls": [
+        "https://www.elitehavens.com/lombok-rental-eh_beachfront-holiday-villas/",
+        "https://www.elitehavens.com/lombok-rental-villas/indonesia-villas/",
+        "https://www.elitehavens.com/lombok-rental-eh_privatepool-holiday-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "beachfront villa lombok",
+          "sv": 90,
+          "pos": 2
+        },
+        {
+          "kw": "lombok private pool villa",
+          "sv": 50,
+          "pos": 2
+        },
+        {
+          "kw": "lombok accommodation villas",
+          "sv": 40,
+          "pos": 2
+        }
+      ]
+    },
+    "regional/country hub": {
+      "count": 2,
+      "sample_urls": [
+        "https://www.elitehavens.com/indonesia-private-villas/",
+        "https://www.elitehavens.com/luxury-villa-offers/indonesia"
+      ],
+      "top_keywords": [
+        {
+          "kw": "villa norbu bali",
+          "sv": 90,
+          "pos": 15
+        },
+        {
+          "kw": "indonesia villa",
+          "sv": 70,
+          "pos": 2
+        }
+      ]
+    },
+    "area-hub: sanur": {
+      "count": 2,
+      "sample_urls": [
+        "https://www.elitehavens.com/sanur-luxury-villas/bali-indonesia-villas/",
+        "https://www.elitehavens.com/sanur-luxury-eh_beachfront-holiday-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "sanur beachfront",
+          "sv": 90,
+          "pos": 4
+        },
+        {
+          "kw": "sanur luxury villa",
+          "sv": 50,
+          "pos": 1
+        }
+      ]
+    },
+    "area-hub: koh samui": {
+      "count": 2,
+      "sample_urls": [
+        "https://www.elitehavens.com/koh-samui-rental-villas/thailand-villas/",
+        "https://www.elitehavens.com/koh-samui-rental-eh_beachfront-holiday-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "beachfront villas koh samui",
+          "sv": 110,
+          "pos": 4
+        },
+        {
+          "kw": "koh samui private villa",
+          "sv": 70,
+          "pos": 2
+        }
+      ]
+    },
+    "destinations-guide": {
+      "count": 2,
+      "sample_urls": [
+        "https://www.elitehavens.com/destinations/the-bukit/",
+        "https://www.elitehavens.com/destinations/lipa-noi/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "bukit",
+          "sv": 210,
+          "pos": 6
+        },
+        {
+          "kw": "koh samui lipa noi",
+          "sv": 140,
+          "pos": 8
+        }
+      ]
+    },
+    "weddings": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/wedding.aspx"
+      ],
+      "top_keywords": [
+        {
+          "kw": "bali wedding villas",
+          "sv": 260,
+          "pos": 4
+        }
+      ]
+    },
+    "homepage": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "elite havens",
+          "sv": 260,
+          "pos": 1
+        }
+      ]
+    },
+    "area-hub: ubud": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/ubud-luxury-villas/bali-indonesia-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "luxury villa in ubud bali",
+          "sv": 140,
+          "pos": 1
+        }
+      ]
+    },
+    "area-hub: nusa lembongan": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/nusa-lembongan-rental-villas/indonesia-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "luxury villa lembongan",
+          "sv": 320,
+          "pos": 2
+        }
+      ]
+    },
+    "area-hub: uluwatu": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/uluwatu-luxury-villas/bali-indonesia-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "luxury villas uluwatu",
+          "sv": 110,
+          "pos": 1
+        }
+      ]
+    },
+    "area-hub: candidasa": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/candidasa-luxury-eh_beachfront-holiday-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "candidasa villa",
+          "sv": 90,
+          "pos": 3
+        }
+      ]
+    },
+    "area-hub: japan/niseko": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/niseko-rental-chalets/japan-chalets/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "niseko chalets",
+          "sv": 70,
+          "pos": 3
+        }
+      ]
+    },
+    "promotions": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/promos/Indonesia-promo.html"
+      ],
+      "top_keywords": [
+        {
+          "kw": "bali villa for large groups",
+          "sv": 140,
+          "pos": 3
+        }
+      ]
+    },
+    "area-hub: maldives": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/maldives-private-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "private maldives villa",
+          "sv": 50,
+          "pos": 3
+        }
+      ]
+    },
+    "area-hub: jimbaran": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/jimbaran-luxury-villas/bali-indonesia-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "bali jimbaran villa",
+          "sv": 170,
+          "pos": 4
+        }
+      ]
+    },
+    "area-hub: india": {
+      "count": 1,
+      "sample_urls": [
+        "https://www.elitehavens.com/goa-rental-villas/india-villas/"
+      ],
+      "top_keywords": [
+        {
+          "kw": "goa villas",
+          "sv": 50,
+          "pos": 5
+        }
+      ]
+    }
+  },
+  "content_investments": [
+    {
+      "label": "Area/destination hub pages (per-location category pages)",
+      "page_count": 33,
+      "example_urls": [
+        "https://www.elitehavens.com/thailand-private-eh_beachfront-holiday-villas/",
+        "https://www.elitehavens.com/seminyak-luxury-4bedroom-villas/",
+        "https://www.elitehavens.com/canggu-luxury-villas/bali-indonesia-villas/"
+      ]
+    },
+    {
+      "label": "Faceted/filter pages (bedroom count, feature filters e.g. beachfront, family, honeymoon)",
+      "page_count": 9,
+      "example_urls": [
+        "https://www.elitehavens.com/bali-rental-4bedroom-villas/",
+        "https://www.elitehavens.com/bali-rental-eh_beachfront-holiday-villas/",
+        "https://www.elitehavens.com/bali-rental-villas/indonesia-villas/"
+      ]
+    },
+    {
+      "label": "Individual villa listing pages (per-property detail pages)",
+      "page_count": 23,
+      "example_urls": [
+        "https://www.elitehavens.com/noku-beach-house-villa/seminyak-bali-indonesia.aspx",
+        "https://www.elitehavens.com/laksmana-estate-villa-adasa-villa/seminyak-bali-indonesia.aspx"
+      ]
+    },
+    {
+      "label": "Magazine / editorial content (travel guides, local tips, destination features)",
+      "page_count": 43,
+      "example_urls": [
+        "https://www.elitehavens.com/magazine/chocolate-heaven-in-bali/",
+        "https://www.elitehavens.com/magazine/where-to-shop-in-bali-fabulous-fashion-hub/",
+        "https://www.elitehavens.com/magazine/before-you-go-7-everyday-symbols-of-bali-you-need-to-know/"
+      ]
+    },
+    {
+      "label": "Destination guide pages (/destinations/ sub-section)",
+      "page_count": 2,
+      "example_urls": [
+        "https://www.elitehavens.com/destinations/the-bukit/",
+        "https://www.elitehavens.com/destinations/lipa-noi/"
+      ]
+    },
+    {
+      "label": "Promotions and offers pages",
+      "page_count": 1,
+      "example_urls": [
+        "https://www.elitehavens.com/promos/Indonesia-promo.html"
+      ]
+    },
+    {
+      "label": "Weddings landing page",
+      "page_count": 1,
+      "example_urls": [
+        "https://www.elitehavens.com/wedding.aspx"
+      ]
+    }
+  ]
+}

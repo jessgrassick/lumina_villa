@@ -1,0 +1,2109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumina Villa Canggu — Digital Strategy P1–P3</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #13162B;
+    --gold: #C9A227;
+    --gold-light: #E8C84A;
+    --gold-pale: #F5EBC8;
+    --bone: #F7F3EA;
+    --bone-dark: #EDE7D6;
+    --white: #FFFFFF;
+    --p1: #C0392B;
+    --p1-bg: #FDECEA;
+    --p1-border: #E74C3C;
+    --p2: #B7700A;
+    --p2-bg: #FEF3E2;
+    --p2-border: #F39C12;
+    --p3: #1A5494;
+    --p3-bg: #EAF2FB;
+    --p3-border: #2E86C1;
+    --text: #2C2F45;
+    --muted: #6B6F85;
+    --border: #DDD8CC;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bone);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* Cover */
+  .cover {
+    background: var(--ink);
+    color: var(--white);
+    padding: 72px 64px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(201, 162, 39, 0.12);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(201, 162, 39, 0.07);
+  }
+  .cover-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .cover h1 span { color: var(--gold); }
+  .cover-sub {
+    font-size: 1.15rem;
+    color: rgba(247, 243, 234, 0.75);
+    margin-bottom: 40px;
+    max-width: 560px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cover-meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(247, 243, 234, 0.5);
+  }
+  .cover-meta-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(247, 243, 234, 0.9);
+  }
+  .cover-divider {
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 32px 0;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Table of Contents */
+  .toc {
+    background: var(--ink);
+    color: var(--white);
+    padding: 40px 64px;
+  }
+  .toc-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .toc-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px 40px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-decoration: none;
+    color: rgba(247, 243, 234, 0.8);
+    font-size: 0.875rem;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: color 0.15s;
+  }
+  .toc-item:hover { color: var(--gold); }
+  .toc-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.8;
+    min-width: 20px;
+  }
+
+  /* Main content */
+  .main { padding: 56px 0 80px; }
+
+  /* Section */
+  .section {
+    margin-bottom: 64px;
+  }
+
+  /* Section Header */
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .section-header-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  .section-header-text p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* Priority Badge */
+  .priority-band {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-size: 0.8rem;
+  }
+  .priority-band.p1 { background: var(--p1-bg); border-left: 4px solid var(--p1-border); }
+  .priority-band.p2 { background: var(--p2-bg); border-left: 4px solid var(--p2-border); }
+  .priority-band.p3 { background: var(--p3-bg); border-left: 4px solid var(--p3-border); }
+  .priority-pill {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  .p1 .priority-pill { background: var(--p1); color: #fff; }
+  .p2 .priority-pill { background: var(--p2); color: #fff; }
+  .p3 .priority-pill { background: var(--p3); color: #fff; }
+  .priority-band-text { color: var(--text); font-weight: 500; }
+
+  /* Cards */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .card-number {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--muted);
+    background: var(--bone);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.65;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* Callout / Insight box */
+  .callout {
+    background: var(--gold-pale);
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.875rem;
+    color: var(--ink);
+    margin: 16px 0;
+    line-height: 1.6;
+  }
+  .callout strong { color: var(--ink); }
+
+  .callout-warning {
+    background: #FEF3E2;
+    border: 1px solid rgba(243, 156, 18, 0.35);
+    border-left: 4px solid #F39C12;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.875rem;
+    color: var(--text);
+    margin: 16px 0;
+    line-height: 1.6;
+  }
+  .callout-warning strong { color: var(--p2); }
+
+  .callout-critical {
+    background: var(--p1-bg);
+    border: 1px solid rgba(231, 76, 60, 0.35);
+    border-left: 4px solid var(--p1-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.875rem;
+    color: var(--text);
+    margin: 16px 0;
+    line-height: 1.6;
+  }
+  .callout-critical strong { color: var(--p1); }
+
+  /* Lists */
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+  .styled-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--bone-dark);
+    line-height: 1.55;
+  }
+  .styled-list li:last-child { border-bottom: none; }
+  .styled-list li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.875rem;
+    padding: 5px 0;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .check-box {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Shot list grid */
+  .shot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .shot-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    background: var(--bone);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: var(--text);
+  }
+  .shot-item::before {
+    content: '📷';
+    font-size: 0.75rem;
+  }
+
+  /* Directory table */
+  .dir-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin: 16px 0;
+  }
+  .dir-table th {
+    background: var(--ink);
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  .dir-table th:first-child { border-radius: 6px 0 0 0; }
+  .dir-table th:last-child { border-radius: 0 6px 0 0; }
+  .dir-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .dir-table tr:nth-child(even) td { background: var(--bone); }
+  .dir-table tr:last-child td { border-bottom: none; }
+  .dir-table .tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .tag-high { background: #D5F5E3; color: #1D8348; }
+  .tag-med { background: #FEF9E7; color: #B7770D; }
+  .tag-low { background: var(--bone-dark); color: var(--muted); }
+  .tag-au { background: #D6EAF8; color: #1A5494; }
+
+  /* KPI table */
+  .kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin: 16px 0;
+  }
+  .kpi-table th {
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .kpi-table th:first-child {
+    background: var(--ink);
+    color: var(--gold);
+    border-radius: 6px 0 0 0;
+    width: 38%;
+  }
+  .kpi-table th.col-p1 { background: var(--p1); color: #fff; }
+  .kpi-table th.col-p2 { background: var(--p2); color: #fff; }
+  .kpi-table th.col-p3 { background: var(--p3); color: #fff; }
+  .kpi-table th:last-child { border-radius: 0 6px 0 0; }
+  .kpi-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .kpi-table tr:nth-child(even) td { background: var(--bone); }
+  .kpi-table tr:last-child td { border-bottom: none; }
+  .kpi-table td:first-child { font-weight: 600; color: var(--ink); }
+  .kpi-val {
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .kpi-val.p1-val { color: var(--p1); }
+  .kpi-val.p2-val { color: var(--p2); }
+  .kpi-val.p3-val { color: var(--p3); }
+
+  /* Keyword table */
+  .kw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.83rem;
+    margin: 16px 0;
+  }
+  .kw-table th {
+    background: var(--ink);
+    color: var(--gold);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 9px 12px;
+    text-align: left;
+  }
+  .kw-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .kw-table tr:nth-child(even) td { background: var(--bone); }
+  .kw-table tr:last-child td { border-bottom: none; }
+  .kw-table code {
+    font-family: "SF Mono", "Fira Code", Consolas, monospace;
+    font-size: 0.82rem;
+    background: var(--bone-dark);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--ink);
+  }
+
+  /* Content calendar */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .content-card {
+    background: var(--bone);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .content-card-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+  .content-card-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .content-card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Positioning block */
+  .positioning-block {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+  .positioning-block-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .positioning-block-quote {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .positioning-block p {
+    font-size: 0.875rem;
+    color: rgba(247, 243, 234, 0.75);
+    line-height: 1.65;
+  }
+
+  /* Audience grid */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .audience-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .audience-card-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .audience-card-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .audience-card-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .badge-primary { background: var(--gold-pale); color: var(--gold); border: 1px solid rgba(201,162,39,0.3); }
+  .badge-secondary { background: var(--p3-bg); color: var(--p3); }
+
+  /* Vetting checklist */
+  .vetting-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .vetting-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--bone);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.825rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .vetting-item .check-box { margin-top: 1px; }
+
+  /* Timeline strip */
+  .timeline {
+    display: flex;
+    gap: 0;
+    margin: 24px 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .timeline-phase {
+    flex: 1;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .timeline-phase:not(:last-child)::after {
+    content: '▶';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    z-index: 1;
+    color: rgba(255,255,255,0.6);
+  }
+  .timeline-phase.tp1 { background: var(--p1); }
+  .timeline-phase.tp2 { background: var(--p2); }
+  .timeline-phase.tp3 { background: var(--p3); }
+  .timeline-phase-label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+  .timeline-phase-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+  .timeline-phase-period {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* Search data */
+  .serp-insight {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .serp-stat {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .serp-stat-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .serp-stat-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .serp-stat-sub {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-top: 4px;
+  }
+
+  /* Competitive row */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.83rem;
+    margin: 16px 0;
+  }
+  .comp-table th {
+    background: var(--ink);
+    color: var(--gold);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 9px 14px;
+    text-align: left;
+  }
+  .comp-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .comp-table tr:nth-child(even) td { background: var(--bone); }
+  .comp-table tr:last-child td { border-bottom: none; }
+
+  /* Appendix */
+  .appendix {
+    background: var(--ink);
+    color: var(--white);
+    padding: 48px 64px;
+    margin-top: 0;
+  }
+  .appendix-inner { max-width: 960px; margin: 0 auto; }
+  .appendix h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .appendix p {
+    font-size: 0.875rem;
+    color: rgba(247, 243, 234, 0.75);
+    margin-bottom: 16px;
+    line-height: 1.65;
+  }
+  .appendix-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .appendix-stat {
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .appendix-stat-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: -0.03em;
+  }
+  .appendix-stat-label {
+    font-size: 0.72rem;
+    color: rgba(247, 243, 234, 0.6);
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--bone-dark);
+    padding: 20px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer-left { font-size: 0.78rem; color: var(--muted); }
+  .footer-right {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: right;
+  }
+  .footer-brand {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+
+  /* Utility */
+  .label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 16px 0;
+  }
+  .gold-text { color: var(--gold); }
+  .ink-text { color: var(--ink); }
+
+  @media print {
+    .cover { padding: 48px; }
+    .toc { padding: 28px 48px; }
+    .main { padding: 40px 0 60px; }
+    body { background: white; }
+    .card { break-inside: avoid; }
+    .section { break-inside: avoid; }
+  }
+
+  @media (max-width: 720px) {
+    .cover { padding: 40px 24px; }
+    .cover h1 { font-size: 1.9rem; }
+    .toc { padding: 28px 24px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 20px; }
+    .shot-grid, .two-col, .audience-grid, .vetting-grid, .content-grid, .serp-insight { grid-template-columns: 1fr; }
+    .appendix-grid { grid-template-columns: 1fr 1fr; }
+    .appendix { padding: 32px 24px; }
+    .footer { flex-direction: column; gap: 8px; padding: 16px 24px; text-align: center; }
+    .timeline { flex-direction: column; }
+    .timeline-phase:not(:last-child)::after { content: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Digital Marketing Strategy — Confidential</div>
+  <h1>Lumina Villa <span>Canggu</span></h1>
+  <p class="cover-sub">A phased P1–P3 playbook to build a full digital presence from zero: discovery, authority, and direct bookings.</p>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Property</span>
+      <span class="cover-meta-value">3-Bed Private Pool Villa, Jl. Babakan Kubu</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Domain</span>
+      <span class="cover-meta-value">luminavillabali.com</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Primary Market</span>
+      <span class="cover-meta-value">Australia (8:1 vs US)</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Strategy Date</span>
+      <span class="cover-meta-value">June 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-inner">
+    <div class="toc-title">Contents</div>
+    <div class="toc-grid">
+      <a href="#methodology" class="toc-item"><span class="toc-num">00</span>How We Got Here</a>
+      <a href="#exec-summary" class="toc-item"><span class="toc-num">01</span>Executive Summary</a>
+      <a href="#market-context" class="toc-item"><span class="toc-num">02</span>Market Context &amp; Positioning</a>
+      <a href="#competitive" class="toc-item"><span class="toc-num">03</span>Competitive Landscape</a>
+      <a href="#p1-foundation" class="toc-item"><span class="toc-num">04</span>P1: Foundation (Weeks 1–4)</a>
+      <a href="#p1-photography" class="toc-item"><span class="toc-num">05</span>P1.1 Professional Photography</a>
+      <a href="#p1-gbp" class="toc-item"><span class="toc-num">06</span>P1.2 Google Business Profile</a>
+      <a href="#p1-ota" class="toc-item"><span class="toc-num">07</span>P1.3 OTA Profiles</a>
+      <a href="#p1-site" class="toc-item" style="color: #E74C3C; font-weight: 700;">⚠️ <span class="toc-num" style="color: #E74C3C;">08</span>P1.4 Microsite Launch — ACTION NEEDED</a>
+      <a href="#p1-inclusions" class="toc-item" style="color: #E74C3C; font-weight: 700;">⚠️ <span class="toc-num" style="color: #E74C3C;">08b</span>P1.4b Free Inclusions — ACTION NEEDED</a>
+      <a href="#p1-partners" class="toc-item" style="color: #E74C3C; font-weight: 700;">⚠️ <span class="toc-num" style="color: #E74C3C;">08c</span>P1.4c Concierge Partners — ACTION NEEDED</a>
+      <a href="#p1-directories" class="toc-item"><span class="toc-num">09</span>P1.5 Directory Listings</a>
+      <a href="#p1-reviews" class="toc-item"><span class="toc-num">10</span>P1.6 Review Collection</a>
+      <a href="#p2-growth" class="toc-item"><span class="toc-num">11</span>P2: Growth (Months 2–4)</a>
+      <a href="#p2-content" class="toc-item"><span class="toc-num">12</span>P2.1 Content Strategy</a>
+      <a href="#p2-influencer" class="toc-item"><span class="toc-num">13</span>P2.2 Guest UGC Strategy</a>
+      <a href="#p2-schema" class="toc-item"><span class="toc-num">14</span>P2.3 Schema Expansion</a>
+      <a href="#p2-nomad" class="toc-item"><span class="toc-num">15</span>P2.4 Long-Term Rental Page</a>
+      <a href="#p2-email" class="toc-item"><span class="toc-num">16</span>P2.5 Email Capture</a>
+      <a href="#p3-scale" class="toc-item"><span class="toc-num">17</span>P3: Scale (Months 4–8)</a>
+      <a href="#p3-llm" class="toc-item"><span class="toc-num">18</span>P3.1 LLM/AEO Visibility</a>
+      <a href="#p3-links" class="toc-item"><span class="toc-num">19</span>P3.2 Link Building</a>
+      <a href="#p3-paid" class="toc-item"><span class="toc-num">20</span>P3.3 Paid Search</a>
+      <a href="#p3-seasonal" class="toc-item"><span class="toc-num">21</span>P3.4 Seasonal Calendar</a>
+      <a href="#p3-video" class="toc-item"><span class="toc-num">22</span>P3.5 Video &amp; Social</a>
+      <a href="#kpis" class="toc-item"><span class="toc-num">23</span>Tracking: GA4 Setup</a>
+      <a href="#hotel-learnings" class="toc-item"><span class="toc-num">24</span>Hotel Marketing Learnings</a>
+      <a href="#appendix" class="toc-item"><span class="toc-num">25</span>Appendix: Research Data</a>
+    </div>
+  </div>
+</div>
+
+<!-- ACTION REQUIRED BANNER -->
+<div style="background: #C0392B; color: #fff; padding: 28px 64px;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div style="display: flex; align-items: flex-start; gap: 16px;">
+      <div style="font-size: 1.6rem; line-height: 1;">⚠️</div>
+      <div>
+        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 8px;">Before anything else can move: we need three things from you</div>
+        <p style="margin: 0 0 12px; opacity: 0.92; line-height: 1.6;">Everything in this strategy is ready to execute. The website is built, the research is done, the recommendations are backed by data. But three sections need your input before we can launch. Without this information, the website has gaps and the OTA listings will not convert as well as they should.</p>
+        <ol style="margin: 0; padding-left: 20px; line-height: 1.8; font-weight: 500;">
+          <li><a href="#p1-site" style="color: #F5EBC8; text-decoration: underline;">P1.4 — Microsite Launch</a> — Confirmed pricing by season. The website has placeholder prices. Real numbers needed before go-live.</li>
+          <li><a href="#p1-inclusions" style="color: #F5EBC8; text-decoration: underline;">P1.4b — Free Inclusions</a> — Confirm which inclusions you will offer and the actual costs. The massage, airport pickup, scooter, welcome basket: which ones are a yes, and what do they cost you?</li>
+          <li><a href="#p1-partners" style="color: #F5EBC8; text-decoration: underline;">P1.4c — Concierge Partners</a> — Who are the people behind the services? Names, photos, backgrounds, menus, websites. The surf instructor, the chef, the yoga teacher, the massage therapist, the driver. We need real people to make the concierge page and OTA listings credible.</li>
+        </ol>
+        <p style="margin: 12px 0 0; opacity: 0.85; font-size: 0.88rem;">Once we have these three, everything else in P1 can launch within days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+  <div class="container">
+
+    <!-- TIMELINE STRIP -->
+    <div class="timeline">
+      <div class="timeline-phase tp1">
+        <div class="timeline-phase-label">P1 · Urgent</div>
+        <div class="timeline-phase-title">Foundation</div>
+        <div class="timeline-phase-period">Weeks 1–4</div>
+      </div>
+      <div class="timeline-phase tp2">
+        <div class="timeline-phase-label">P2 · Important</div>
+        <div class="timeline-phase-title">Growth</div>
+        <div class="timeline-phase-period">Months 2–4</div>
+      </div>
+      <div class="timeline-phase tp3">
+        <div class="timeline-phase-label">P3 · Planned</div>
+        <div class="timeline-phase-title">Scale</div>
+        <div class="timeline-phase-period">Months 4–8</div>
+      </div>
+    </div>
+
+    <!-- METHODOLOGY -->
+    <div class="section" id="methodology" style="margin-top: 48px;">
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--ink); color: var(--gold);">?</div>
+        <div class="section-header-text">
+          <h2>How We Got Here</h2>
+          <p>What we researched, and why every recommendation in this document is backed by data, not just opinion.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p>Before writing a single recommendation, we did the research. Every suggestion in this strategy comes from real data about what travellers are searching for, what competitors are doing, and where the gaps are. Here is what we looked at:</p>
+
+        <ul class="styled-list">
+          <li><strong>321 keywords analysed:</strong> We looked at what people actually type into Google when searching for villas in Canggu. This tells us which words to use on the website, what topics to write about, and which searches have the most people behind them.</li>
+          <li><strong>77 "People Also Ask" questions collected:</strong> When you search on Google, you see dropdown questions other people have asked. We collected all of them for Canggu villa searches. These questions tell us exactly what travellers want to know, and if the website answers them, Google is more likely to show it.</li>
+          <li><strong>8 Google search result pages studied:</strong> We searched for the main terms a guest would use ("private pool villa canggu", "3 bedroom villa bali", etc.) and recorded who appears on page one. This shows who the competition is and where there is space.</li>
+          <li><strong>Competitor deep-dive (Elite Havens):</strong> The biggest villa operator in the market. We studied their website structure, what keywords they rank for, where their backlinks come from, and what content they publish. This shows what "good" looks like in this market and where they have gaps Lumina can fill.</li>
+          <li><strong>15 nearby competing villas mapped:</strong> We identified every comparable villa within a short radius. This helps with pricing (what the market charges), positioning (what they say vs what Lumina can say differently), and differentiation (what nobody else is offering).</li>
+          <li><strong>Australian vs US market sizing:</strong> We compared search volumes from both countries. Australia dominates 8 to 1. That one data point shapes everything: the language, the pricing display, the seasonal calendar, and which platforms to prioritise.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Why this matters:</strong> Recommendations without research are just opinions. Every priority in this document, from "get professional photos first" to "skip Booking.com", is backed by what the data showed us. Where experience adds context (like knowing how hotel marketing works at scale), it is flagged separately. But the foundation is data.
+        </div>
+      </div>
+    </div>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section" id="exec-summary" style="margin-top: 48px;">
+      <div class="section-header">
+        <div class="section-icon">◈</div>
+        <div class="section-header-text">
+          <h2>Executive Summary</h2>
+          <p>Where Lumina Villa sits today, and why the opportunity is significant.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p>Lumina Villa is a brand new 3-bedroom private pool villa on Jl. Babakan Kubu, Canggu. Rice field views, an outdoor bathtub, and 24/7 concierge service give it genuine differentiation in a market where most competitors win purely on price or volume of listings.</p>
+        <p>The current digital footprint is a single landing page. There is no Google Business Profile, no OTA presence, no content strategy, no reviews, and no directory listings. The booking process runs through WhatsApp.</p>
+        <p>This is a ground-up build, which means there is no technical debt, no bad reviews to overcome, and no wrong positioning to undo. Everything can be done right from day one.</p>
+
+        <div class="callout">
+          <strong>The core opportunity:</strong> OTAs dominate the discovery layer (Airbnb, Expedia, TripAdvisor appear in 4–5 of every 8 Canggu search results). A traveller discovers the villa via Airbnb, Googles "Lumina Villa Canggu", finds a polished direct website, and books direct on their next stay. That transition from OTA to direct is where the margin lives. The P1 and P2 work builds both sides of that funnel simultaneously.
+        </div>
+
+        <ul class="styled-list">
+          <li>The Australian market represents 8x the search volume of the US for Canggu villa terms. All content, positioning, and targeting must be AU-first.</li>
+          <li>OTAs are discovery channels, not permanent homes. Use them to fill the calendar while building direct booking infrastructure.</li>
+          <li>The good news: most villa operators have weak websites. Google search results are dominated by big aggregator sites (Airbnb, Booking.com, TripAdvisor), not individual villas. A well-built website with good content can outrank other individual villas relatively quickly.</li>
+          <li>"Close to the action, away from the noise" is not a tagline. It is the positioning truth that every piece of content, every photo, and every concierge interaction should reinforce. Babakan Kubu genuinely delivers on it. Build everything around this promise because it is the one thing the big OTA listings cannot communicate as clearly as a direct website can.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MARKET CONTEXT -->
+    <div class="section" id="market-context">
+      <div class="section-header">
+        <div class="section-icon">◉</div>
+        <div class="section-header-text">
+          <h2>Market Context &amp; Positioning</h2>
+          <p>Search demand, audience segments, and the strategic position to own.</p>
+        </div>
+      </div>
+
+      <div class="positioning-block">
+        <div class="positioning-block-label">Core Positioning</div>
+        <div class="positioning-block-quote">"Close to the action, away from the noise."</div>
+        <p>Canggu's reputation is surf, sunsets, and social scenes. But a large segment of Bali travellers — especially those travelling as families, or returning couples, or remote workers — actively want proximity to Canggu's cafes and surf breaks without being inside the noise. Jl. Babakan Kubu delivers exactly that. Rice field views reinforce the "away from the noise" side. Walking distance to Echo Beach and Berawa reinforces "close to the action." This is not a compromise position. It is an advantage.</p>
+      </div>
+
+      <div class="label" style="margin-top: 20px;">Target Audiences</div>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-card-badge badge-primary">Primary</div>
+          <div class="audience-card-name">Australian Families</div>
+          <div class="audience-card-note">3-bed layout suits 2 adults + children. AU school holidays (Apr, Jul, Sep-Oct, Dec-Jan) drive booking peaks. Private pool is the deciding factor. Rice field calm beats resort noise.</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-card-badge badge-primary">Primary</div>
+          <div class="audience-card-name">Australian Couples &amp; Honeymooners</div>
+          <div class="audience-card-note">Outdoor bathtub is a hero asset for this segment. Rice field sunsets. Concierge-arranged in-villa dinners. Google's "People Also Ask" boxes (the dropdown questions that appear in search results) show "best villas for couples in Bali" appearing frequently.</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-card-badge badge-secondary">Secondary</div>
+          <div class="audience-card-name">Digital Nomads</div>
+          <div class="audience-card-note">Long-term stay segment (1,300 searches/mo at $0.69 CPC, low competition). Monthly rate + fast WiFi + coworking proximity. Separate landing page required (P2).</div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-card-badge badge-secondary">Secondary</div>
+          <div class="audience-card-name">UK / US Wellness Seekers</div>
+          <div class="audience-card-note">Secondary volume markets. Yoga retreats, Seminyak proximity, "Bali reset" narrative. Content can serve this segment without diluting AU-primary messaging.</div>
+        </div>
+      </div>
+
+      <div class="label" style="margin-top: 24px;">Search Demand Snapshot (AU Market)</div>
+      <table class="kw-table">
+        <thead>
+          <tr>
+            <th>Keyword Cluster</th>
+            <th>Monthly Volume</th>
+            <th>Competition</th>
+            <th>CPC</th>
+            <th>Opportunity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>canggu villa</code> cluster</td>
+            <td>2,900/mo</td>
+            <td>High (OTAs)</td>
+            <td>—</td>
+            <td><span class="tag tag-med">Content + OTA</span></td>
+          </tr>
+          <tr>
+            <td><code>canggu accommodation</code></td>
+            <td>2,400/mo</td>
+            <td>High (Hotels Pack)</td>
+            <td>—</td>
+            <td><span class="tag tag-med">Content + GBP</span></td>
+          </tr>
+          <tr>
+            <td><code>bali villa rental</code></td>
+            <td>1,600/mo</td>
+            <td>Medium</td>
+            <td>—</td>
+            <td><span class="tag tag-high">Direct page</span></td>
+          </tr>
+          <tr>
+            <td><code>bali long term villa rental</code></td>
+            <td>1,300/mo</td>
+            <td><strong style="color:#1D8348;">Low (0.45)</strong></td>
+            <td>$0.69</td>
+            <td><span class="tag tag-high">Dedicated page</span></td>
+          </tr>
+          <tr>
+            <td><code>private pool villa canggu</code></td>
+            <td>260/mo</td>
+            <td>Medium-Low</td>
+            <td>—</td>
+            <td><span class="tag tag-high">GBP + Homepage</span></td>
+          </tr>
+          <tr>
+            <td><code>where to stay canggu</code></td>
+            <td>170/mo</td>
+            <td>Low</td>
+            <td>$8.41</td>
+            <td><span class="tag tag-high">Blog article</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout-warning">
+        <strong>What travellers are actually asking Google (77 questions collected):</strong> When someone searches for Canggu on Google, a "People Also Ask" box appears with real questions from other travellers. We collected 77 of these. The most common are big-picture questions like "Where to avoid in Bali?", "Nicest part of Bali to stay?", and "Are Bali villas worth it?". These are people who have not decided where to stay yet. If Lumina's website answers these questions well, it shows up when people are still deciding. The biggest opportunity is the "things to do in Canggu" group: 25 questions that a single well-written guide could answer.
+      </div>
+    </div>
+
+    <!-- COMPETITIVE -->
+    <div class="section" id="competitive">
+      <div class="section-header">
+        <div class="section-icon">◎</div>
+        <div class="section-header-text">
+          <h2>Competitive Landscape</h2>
+          <p>Where everything stands right now. These competitors have been established longer, but this is a snapshot of today, not a ceiling on where Lumina can be. The gap is closeable with the right foundations.</p>
+        </div>
+      </div>
+
+      <div class="serp-insight">
+        <div class="serp-stat">
+          <div class="serp-stat-num">5<span style="font-size:1rem;">/8</span></div>
+          <div class="serp-stat-label">search results with Booking.com in top results</div>
+          <div class="serp-stat-sub">OTA dominance</div>
+        </div>
+        <div class="serp-stat">
+          <div class="serp-stat-num">5<span style="font-size:1rem;">/8</span></div>
+          <div class="serp-stat-label">search results with TripAdvisor presence</div>
+          <div class="serp-stat-sub">Review authority</div>
+        </div>
+        <div class="serp-stat">
+          <div class="serp-stat-num">4<span style="font-size:1rem;">/8</span></div>
+          <div class="serp-stat-label">search results with Airbnb in results</div>
+          <div class="serp-stat-sub">Discovery channel</div>
+        </div>
+      </div>
+
+      <div class="label" style="margin-top: 8px;">Key Competitors</div>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th>Strength</th>
+            <th>AU Keywords</th>
+            <th>Strategy Implication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Elite Havens</strong></td>
+            <td>Top villa specialist. DR 386. 43 editorial pages. Ranks pos 2–4 for "canggu luxury villas".</td>
+            <td>2,909</td>
+            <td>Match their editorial depth over 12 months. Target their keyword gaps, not their strengths.</td>
+          </tr>
+          <tr>
+            <td><strong>Bali Villa Escapes</strong></td>
+            <td>AU-focused (.com.au). High relevance to primary market. Directory listing here is high priority.</td>
+            <td>—</td>
+            <td>List with them. Their AU SEO authority creates referral and link value.</td>
+          </tr>
+          <tr>
+            <td><strong>Ministry of Villas</strong></td>
+            <td>Ranks in 3/8 checked search results. Broad villa network.</td>
+            <td>—</td>
+            <td>List with them for search visibility via association. Backlink value.</td>
+          </tr>
+          <tr>
+            <td><strong>villa-finder.com</strong></td>
+            <td>1,108 keyword overlap with Elite Havens. Strong Asia-Pacific positioning.</td>
+            <td>—</td>
+            <td>Directory listing and partnership. Strong referral base.</td>
+          </tr>
+          <tr>
+            <td><strong>Ametis Villa</strong></td>
+            <td>Named direct competitor. Established brand, similar position.</td>
+            <td>—</td>
+            <td>Monitor content and offers. Do not copy. Differentiate on rice field/quieter narrative.</td>
+          </tr>
+          <tr>
+            <td><strong>Blacksand Villa</strong></td>
+            <td>Named direct competitor. Newer market entrant.</td>
+            <td>—</td>
+            <td>Track rankings quarterly. Identify content gaps they are not covering.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>What Google actually shows:</strong> When someone searches "canggu accommodation" or "canggu villa", Google shows a Hotels Pack (a map with hotel-style listings). For more specific searches like "private pool villa canggu", it shows a Local Pack (a map with three local business listings). The only way to appear in these map sections is to have a Google Business Profile set up. Without it, Lumina is invisible for the searches where people are closest to booking.
+      </div>
+    </div>
+
+    <!-- ===================== P1 ===================== -->
+    <div class="section" id="p1-foundation">
+      <div class="priority-band p1">
+        <span class="priority-pill">P1</span>
+        <span class="priority-band-text"><strong>Foundation — Weeks 1–4.</strong> These six items must be in place before the first paying guest arrives. Without them, early bookings produce no compounding value.</span>
+      </div>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--p1); color: #fff;">1</div>
+        <div class="section-header-text">
+          <h2>P1: Foundation</h2>
+          <p>The six non-negotiable items. Do all of these before accepting guests.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P1.1 Photography -->
+    <div class="section" id="p1-photography" style="margin-top: -24px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.1 — Professional Photography Shoot</div>
+          <div class="card-number">Week 1</div>
+        </div>
+        <p>Photography is the single highest-ROI investment a new villa can make. Every downstream channel depends on it: OTA listings, the website, directory profiles, social media, influencer briefs, press pitches. Poor photos kill conversion at every stage. Good photos do the selling before any copy is read.</p>
+        <p>The behaviour pattern that makes this strategic: OTA browsers who see beautiful photos will Google the villa name directly. That Google search is the beginning of the direct booking funnel. Photography quality determines whether that Google moment happens at all.</p>
+
+        <div class="callout-critical">
+          <strong>Non-negotiable rule:</strong> Every image must sell the dream. One bad photo (cluttered surface, harsh midday light, unmade bed, overflowing rubbish bin in corner) undermines trust built by every other image. Review every shot before publishing. Cull aggressively.
+        </div>
+
+        <div class="label">Shot List</div>
+        <div class="shot-grid">
+          <div class="shot-item">Pool at golden hour (front + side angle)</div>
+          <div class="shot-item">Rice field view at dawn</div>
+          <div class="shot-item">Rice field view at dusk / magic hour</div>
+          <div class="shot-item">Outdoor bathtub styled (hero asset)</div>
+          <div class="shot-item">Master bedroom, natural light</div>
+          <div class="shot-item">Second + third bedrooms</div>
+          <div class="shot-item">Open-plan living / kitchen area</div>
+          <div class="shot-item">Each bathroom, clean and styled</div>
+          <div class="shot-item">Outdoor dining / sala area</div>
+          <div class="shot-item">Garden and entrance gate</div>
+          <div class="shot-item">Aerial drone: villa + rice field context</div>
+          <div class="shot-item">Aerial drone: neighbourhood / Babakan Kubu</div>
+          <div class="shot-item">Lifestyle: breakfast by pool</div>
+          <div class="shot-item">Lifestyle: sunset drinks on terrace</div>
+        </div>
+
+        <div class="callout-warning" style="margin-top: 16px;">
+          <strong>Budget for drone shots.</strong> The rice field aerial is one of the most differentiating visual assets available to this property. It communicates "quiet", "green", and "exclusive" in a single frame. No other marketing asset communicates the location story as efficiently.
+        </div>
+      </div>
+    </div>
+
+    <!-- P1.2 GBP -->
+    <div class="section" id="p1-gbp">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.2 — Claim the Google Business Profile</div>
+          <div class="card-number">Week 1</div>
+        </div>
+        <p><strong>Why this matters:</strong> When someone searches "private pool villa canggu" on Google, a map with three villa listings appears at the top of the page. That map section is called the Local Pack. Without a claimed Google Business Profile, Lumina cannot control what appears there, no matter how good the website is. The profile already exists but has not been claimed. Claiming it takes about 15 minutes and gives full control over the listing: photos, description, contact details, and Q&amp;A.</p>
+
+        <ul class="styled-list">
+          <li><strong>Claim it:</strong> Go to business.google.com, search for the existing listing, and follow the verification steps. This gives you control of the profile.</li>
+          <li><strong>Category:</strong> Set as Vacation Rental. Add Villa as a secondary category.</li>
+          <li><strong>Description:</strong> Lead with the rice field views, private pool, and Babakan Kubu location. Include "3 bedroom", "private pool", "Canggu" in the first two sentences for Local Pack relevance.</li>
+          <li><strong>Photos:</strong> Upload the full photography set from shoot. GBP photo quality directly correlates with click-through rate in the Local Pack.</li>
+          <li><strong>WhatsApp integration:</strong> Link WhatsApp number as the primary booking contact. Google supports WhatsApp as a call-to-action button on the profile.</li>
+          <li><strong>Opening hours:</strong> Set to 24/7 (concierge availability is a selling point).</li>
+          <li><strong>Q&A section:</strong> Pre-populate with the most common guest questions (parking, check-in time, WiFi speed, pool size, nearest surf break).</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Review velocity matters from day one.</strong> GBP ranking in the Local Pack is influenced by review count and recency. Every guest from the very first booking should be asked for a Google review. The first 5–10 reviews compound the ranking benefit faster than anything else.
+        </div>
+      </div>
+    </div>
+
+    <!-- P1.3 OTA -->
+    <div class="section" id="p1-ota">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.3 — OTA Profiles: Airbnb + Expedia</div>
+          <div class="card-number">Week 1–2</div>
+        </div>
+        <p><strong>Why these two platforms:</strong> Most travellers do not start by searching for "Lumina Villa". They search for "villa in Canggu" on Airbnb or Expedia and browse until something catches their eye. These platforms are where people discover new villas. The goal is not to live on them forever (they take a commission on every booking). The goal is to be seen there, impress people with the photos and inclusions, and then have those guests book directly next time. Two platforms is enough to cover the global market without spreading management effort too thin.</p>
+
+        <div class="two-col">
+          <div>
+            <div class="label">Why Airbnb</div>
+            <ul class="styled-list">
+              <li>Appears in 4/8 Canggu search results</li>
+              <li>Strong AU leisure traveller base</li>
+              <li>Superhost status drives visibility within the platform</li>
+              <li>Villa/private home inventory is core to its product positioning</li>
+            </ul>
+          </div>
+          <div>
+            <div class="label">Why Expedia</div>
+            <ul class="styled-list">
+              <li>Broader corporate and family travel reach</li>
+              <li>Strong AU market presence</li>
+              <li>Feeds Hotels.com and other Expedia Group inventory</li>
+              <li>Preferred Partner status achievable with early reviews</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="label" style="margin-top: 8px;">Booking.com: Not Recommended</div>
+        <p style="font-size: 0.875rem; color: var(--text);">We recommend excluding Booking.com. It appears in 5 out of 8 search results for Canggu villa terms, which sounds good, but their aggressive rate parity rules (they require your prices on their platform to match or beat your direct prices) and high commission structure make it harder to build a direct booking business. Their dominance in search can actually work against you: guests who find you on Booking.com have less reason to ever visit your own website. Airbnb and Expedia together provide sufficient global reach without that problem.</p>
+
+        <div class="callout">
+          <strong>Pricing strategy:</strong> Set OTA rates at a slight premium over direct rates (not parity). This creates a rational incentive for guests who discover the villa on OTAs to book direct on their next stay. Communicate "book direct for best rate" clearly on the website.
+        </div>
+      </div>
+    </div>
+
+    <!-- P1.4 Site -->
+    <div class="section" id="p1-site">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.4 — Microsite Launch (5 Pages)</div>
+          <div class="card-number">Week 2–4</div>
+        </div>
+        <p>The site is already in development. The priority is ensuring it launches with the right foundations rather than launching fast with problems that compound. Two issues on the current single landing page must be addressed before the full site goes live.</p>
+
+        <div class="callout-critical">
+          <strong>Current landing page problem: No pricing visible.</strong> A villa website without pricing is a conversion killer. Travellers who cannot see a rate immediately assume either (a) it is too expensive, or (b) the booking process is complicated. Both kill enquiry. Pricing by season must be visible before launch, even if approximate.
+        </div>
+
+        <div class="label">Required Pages</div>
+        <ul class="styled-list">
+          <li><strong>Home:</strong> Hero photography, positioning line, key selling points, pricing entry point, WhatsApp CTA. Schema: LodgingBusiness (Villa), WebSite, AggregateRating (once reviews exist).</li>
+          <li><strong>The Villa:</strong> Full gallery, room-by-room description, specifications (bedroom count, pool dimensions, bathtub, WiFi speed, kitchen), floor plan. Schema: HotelRoom, Offer.</li>
+          <li><strong>Location:</strong> Canggu neighbourhood guide, proximity to surf breaks, cafes, nightlife, wellness studios. Answers the real questions travellers ask Google. This page does the most work for search visibility at launch.</li>
+          <li><strong>Concierge:</strong> What the 24/7 concierge can arrange (surf lessons, transport, private chef, yoga, spa). This page differentiates from Airbnb listings and justifies direct booking.</li>
+          <li><strong>Book:</strong> Pricing by season (low/high/peak), availability calendar, WhatsApp booking flow, 2-hour response promise. FAQ schema covering the 10 most common booking questions.</li>
+        </ul>
+
+        <div class="label" style="margin-top: 16px;">What the website needs to do well (handled in the build)</div>
+        <ul class="styled-list">
+          <li>Each page has a clear title that includes what people actually search for (not just "Lumina Villa" on every page)</li>
+          <li>FAQ sections on the Location and Book pages answer the real questions travellers are asking Google</li>
+          <li>Structured data (code that tells Google "this is a villa with 3 bedrooms, a pool, and these prices") is built into every page. This helps Google show richer results</li>
+          <li>The site loads fast on mobile phones, which is how most Bali travellers browse. Speed optimisation is a later-phase refinement once content and photography are finalised</li>
+          <li>The site works for AI tools like ChatGPT and Google's AI Overview, not just traditional search. This is built into the code structure</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P1.4b Free Inclusions -->
+    <div class="section" id="p1-inclusions">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.4b — Free Inclusions: The Headline Differentiator</div>
+          <div class="card-number">Launch</div>
+        </div>
+        <p>Most villa listings compete on price, photography, and location. One lever almost nobody pulls is a genuinely compelling inclusions package — one that is specific enough to appear in the OTA headline and rare enough to stop the scroll. The following set costs approximately IDR 800K–1.2M per booking ($52–77 USD). The revenue impact of being the only listing in Canggu with "complimentary massage for every guest" in the headline is worth multiples of that cost.</p>
+
+        <div class="callout">
+          <strong>The commercial logic:</strong> On Airbnb and Expedia, the headline and the first three inclusion bullets are what determine whether a guest clicks through. A free Balinese massage for every guest is a scroll-stopper. It changes the comparison frame from "price per night" to "what do I actually get?" — a frame that favours Lumina.
+        </div>
+
+        <div class="label" style="margin-top: 16px;">Recommended Complimentary Inclusions</div>
+        <ul class="styled-list">
+          <li><strong>Airport pickup for every stay</strong> — Market rate IDR 350–500K. It is the first touchpoint of the stay and solves the biggest practical anxiety for arriving travellers (especially families with bags and children). No other inclusion removes friction as early as this one.</li>
+          <li><strong>1 scooter per stay</strong> — Cost IDR 60–80K/day. In Canggu, scooter access is not a convenience. It is how the neighbourhood works. Including one scooter free is a Canggu identity move: it signals that the villa understands the local culture, not just the pool market. Huge perceived value relative to actual cost.</li>
+          <li><strong>1x 60-minute Balinese massage per guest</strong> — Market rate IDR 350–500K per person. This is the single highest-impact inclusion on OTA listings. It is the #1 scroll-stopper. Nobody else includes this free. Put it in the headline. A family of four receives four massages — that is IDR 1.4–2M of value they would otherwise pay for separately. For a couple, it sets the holiday tone before they arrive.</li>
+          <li><strong>Welcome basket</strong> — IDR 150–300K. Fresh tropical fruit, Bali coffee, cold drinks, local snacks. This is the baseline at premium villas and the quality differentiator against budget listings. A poor welcome basket is noticeable. A great one earns a mention in reviews unprompted.</li>
+          <li><strong>Grocery pre-stocking at cost (no service fee)</strong> — Guest sends a list before arrival; concierge stocks the fridge at exact market rate with no markup. Rare. Builds trust. Particularly valued by families and long-stay nomads who need to settle in without a supermarket run on day one.</li>
+        </ul>
+
+        <div class="callout-warning">
+          <strong>How to present these on the website and OTAs:</strong> Do not bury them in a bullet list under "amenities." Put the massage in the headline ("Complimentary Balinese massage for every guest") and the airport transfer and scooter in the first two listing bullets. These are marketing claims, not footnotes. The concierge page on the microsite should dedicate a section to what comes included vs what can be arranged. The contrast between free and available-on-request signals generosity without limiting the upsell.
+        </div>
+      </div>
+    </div>
+
+    <!-- P1.4c Concierge Partners -->
+    <div class="section" id="p1-partners">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.4c — Concierge Partner Profiles</div>
+          <div class="card-number">Week 2–3</div>
+        </div>
+        <p><strong>Why this matters:</strong> The website and OTA listings talk about surfing lessons, private chefs, yoga sessions, spa treatments, and airport transfers. But who are these people? A guest reading "private chef available" wants to know: what do they cook, what is their background, can I see their food? The same goes for every service.</p>
+        <p>Without real partner profiles, the concierge services are just a list. With them, they become a reason to book. This is the difference between a villa that says "we can arrange a chef" and one that says "Chef Wayan has cooked private dinners for 200+ villa guests. His signature nasi goreng uses a family recipe from Ubud. Here is his menu."</p>
+
+        <div class="callout-critical">
+          <strong>This must happen before directory listings or review collection.</strong> The concierge offering is one of Lumina's biggest selling points. It needs to be backed by real people, real names, real photos, and real descriptions before it goes into any listing or marketing material. A vague promise does not convert. A named partner with a story does.
+        </div>
+
+        <div class="label">What to collect for each partner</div>
+        <ul class="styled-list">
+          <li><strong>Surf instructors:</strong> Name, experience level, what breaks they teach at, beginner vs advanced, photo. Link to their Instagram or website if they have one.</li>
+          <li><strong>Private chef(s):</strong> Name, cuisine style, signature dishes, sample menu with pricing, dietary accommodations. A photo of them cooking or their food.</li>
+          <li><strong>Yoga / wellness practitioners:</strong> Name, style (vinyasa, yin, hatha), where they trained, availability for in-villa sessions, photo.</li>
+          <li><strong>Massage / spa therapists:</strong> Name, specialities, qualifications, what a session includes, photo.</li>
+          <li><strong>Driver / airport transfer:</strong> Name, vehicle type, reliability record, English level. This person is the first face guests see.</li>
+          <li><strong>Scooter rental:</strong> Provider name, condition of bikes, what is included (helmet, lock), insurance situation.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Content opportunity:</strong> These partner profiles become website content, Instagram content, and OTA listing detail all at once. "Meet Chef Wayan" is a blog post, a concierge page section, and an Airbnb experience listing. One set of research, three channels of output.
+        </div>
+      </div>
+    </div>
+
+    <!-- P1.5 Directories -->
+    <div class="section" id="p1-directories">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.5 — Directory Listings</div>
+          <div class="card-number">Week 3–4</div>
+        </div>
+        <p><strong>Why bother with directories:</strong> Sites like Bali Villa Escapes and Ministry of Villas already rank on Google for searches like "Canggu villas" and "Bali villa rental". When Lumina is listed on these sites, two things happen: (1) their visitors see Lumina and some will click through to the website, and (2) the link from their site to yours tells Google "this is a real villa" which helps the Lumina website rank better over time. Think of it as being listed in the right guidebooks.</p>
+
+        <table class="dir-table">
+          <thead>
+            <tr>
+              <th>Directory</th>
+              <th>Why it matters</th>
+              <th>Priority</th>
+              <th>Audience</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bali Villa Escapes (.com.au)</strong></td>
+              <td>AU-focused domain. Direct alignment with primary market. Ranks in AU search results for Canggu terms.</td>
+              <td><span class="tag tag-high">High</span></td>
+              <td><span class="tag tag-au">AU</span></td>
+            </tr>
+            <tr>
+              <td><strong>Ministry of Villas</strong></td>
+              <td>Ranks in 3/8 checked search results. Established villa network with editorial credibility.</td>
+              <td><span class="tag tag-high">High</span></td>
+              <td><span class="tag tag-au">AU/UK</span></td>
+            </tr>
+            <tr>
+              <td><strong>The Top Villas</strong></td>
+              <td>International reach. Strong UK and US audience. Useful for secondary market growth.</td>
+              <td><span class="tag tag-med">Medium</span></td>
+              <td>Global</td>
+            </tr>
+            <tr>
+              <td><strong>villa-finder.com</strong></td>
+              <td>1,108 keyword overlap with Elite Havens. Strong Asia-Pacific authority. Backlink quality is high.</td>
+              <td><span class="tag tag-high">High</span></td>
+              <td>Asia-Pacific</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          Each directory listing should use different descriptive copy (avoid duplicate content) and link back to luminavillabali.com with the villa name as anchor text. Provide each directory with the professional photography. Low-quality photos in directory profiles undermine the brand perception built by the main site.
+        </div>
+      </div>
+    </div>
+
+    <!-- P1.6 Reviews -->
+    <div class="section" id="p1-reviews">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P1.6 — Review Strategy</div>
+          <div class="card-number">Conversation before first guest</div>
+        </div>
+        <p><strong>Why reviews matter more than almost anything else:</strong> When someone is comparing two similar villas, they pick the one with more reviews and better ratings. It is that simple. Reviews affect where the villa appears in Google Maps results, where it sorts on Airbnb and Expedia, and whether someone trusts the website enough to message on WhatsApp. A new villa with zero reviews is a harder sell than an average villa with 30 reviews.</p>
+
+        <div class="callout-critical">
+          <strong>This needs a proper conversation before we decide how to do it.</strong> Reviews are not just "ask guests to leave a review." They are a multi-layered strategy that touches every platform differently: Google has different rules to Airbnb, which has different rules to TripAdvisor. What you say, when you say it, which platform you direct people to first, how you handle negative feedback, whether you incentivise, what those incentives look like within each platform's terms of service. Done well from day one, reviews compound fast and the platforms reward you with better visibility. Done carelessly, you can trigger flags, get reviews removed, or worse, attract the wrong kind of attention. The platforms are sticky: once a pattern is established, it is hard to change direction.
+        </div>
+
+        <p>We recommend sitting down and working through a tailored review strategy before the first guest checks out. The impact is too high and the platform rules too specific to improvise.</p>
+
+        <div class="label" style="margin-top: 16px;">What the strategy will cover</div>
+        <ul class="styled-list">
+          <li><strong>Platform priority order:</strong> Which platform gets asked first, second, third. Not all at once.</li>
+          <li><strong>Timing and touchpoints:</strong> When during the guest journey each conversation happens (check-in, mid-stay, checkout, post-stay).</li>
+          <li><strong>Incentive structure:</strong> What is allowed on each platform, what works, and what crosses the line.</li>
+          <li><strong>Negative review protocol:</strong> How to respond, when to respond, and what not to do. One bad response is more damaging than the review itself.</li>
+          <li><strong>Review velocity targets:</strong> How many reviews per month to aim for, and why the first 20 matter disproportionately.</li>
+          <li><strong>TripAdvisor setup:</strong> A TripAdvisor listing with reviews increases search visibility even if the booking function is not used. Worth setting up early.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===================== P2 ===================== -->
+    <div class="section" id="p2-growth">
+      <div class="priority-band p2">
+        <span class="priority-pill">P2</span>
+        <span class="priority-band-text"><strong>Growth — Months 2–4.</strong> The foundations are in place: OTAs are live, early reviews are coming in, the website exists. Now the question is: how do you stop paying commissions on every booking? This phase builds the content and channels that bring people directly to you, not through a platform.</span>
+      </div>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--p2); color: #fff;">2</div>
+        <div class="section-header-text">
+          <h2>P2: Growth</h2>
+          <p>Content that brings people to you, guest photos that sell for you, website upgrades, email collection, and the long-stay revenue stream.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2.1 Content -->
+    <div class="section" id="p2-content" style="margin-top: -24px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P2.1 — Content Strategy</div>
+          <div class="card-number">Month 2</div>
+        </div>
+        <p><strong>Why write articles:</strong> Remember those 77 questions travellers are asking Google? If Lumina publishes helpful, well-written articles that answer those questions, Google starts showing the Lumina website to people who are still researching their trip. They might not book today, but they now know the name. When they are ready to book, Lumina is already familiar. The questions fall into four groups: where to stay (26 questions), what to do (25 questions), villa-specific (10 questions), and booking/trust (10 questions). Each article can answer a cluster of these and link back to the booking page.</p>
+        <p>Each article should be thorough (1,200+ words), include a FAQ section answering 4 to 6 related questions, and link to the villa booking page. The FAQ section is important because Google often pulls these answers directly into search results.</p>
+
+        <div class="label">Priority Content Pieces</div>
+        <div class="content-grid">
+          <div class="content-card">
+            <div class="content-card-title">Where to Stay in Canggu: A Neighbourhood Guide</div>
+            <div class="content-card-meta">
+              <span>Answers 26 traveller questions</span>
+              <span>Primary article</span>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="content-card-title">Things to Do in Canggu: The Complete 2026 Guide</div>
+            <div class="content-card-meta">
+              <span>Answers 25 activity questions</span>
+              <span>High volume</span>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="content-card-title">Canggu vs Seminyak: Which is Better for Your Trip?</div>
+            <div class="content-card-meta">
+              <span>Frequently asked on Google</span>
+              <span>Decision-stage</span>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="content-card-title">Are Bali Villas Worth It? Villa vs Hotel Comparison</div>
+            <div class="content-card-meta">
+              <span>Frequently asked on Google</span>
+              <span>Trust-building</span>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="content-card-title">Canggu for Families: A Parent's Guide to Bali's Best Neighbourhood</div>
+            <div class="content-card-meta">
+              <span>Primary audience</span>
+              <span>AU families</span>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="content-card-title">Digital Nomad Guide to Canggu: Remote Work in Bali 2026</div>
+            <div class="content-card-meta">
+              <span>Long-stay funnel</span>
+              <span>Low competition</span>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="content-card-title">Best Time to Visit Canggu: Month-by-Month Guide</div>
+            <div class="content-card-meta">
+              <span>Travel logistics</span>
+              <span>Early funnel</span>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="content-card-title">Canggu for Couples: Romantic Experiences and Villa Stays</div>
+            <div class="content-card-meta">
+              <span>Honeymoon segment</span>
+              <span>Bathtub hero</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>LLM signal:</strong> Structured, question-answering content on a fast, crawlable HTML site is the primary driver of ChatGPT and Gemini citations. When someone asks "best villa in Canggu" or "where to stay in Canggu" in an AI assistant, the answer draws from indexed, well-structured web content. Publishing comprehensive content in P2 builds the LLM training signal that P3 will monitor and optimise.
+        </div>
+      </div>
+    </div>
+
+    <!-- P2.2 Influencer -->
+    <div class="section" id="p2-influencer">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P2.2 — Guest UGC Strategy (Influencer: Phase 2)</div>
+          <div class="card-number">Month 2–3</div>
+        </div>
+        <p>Focus on guest-generated content in the first 12 months. Real guests posting real stays is more credible than any paid collaboration. Influencer strategy comes after you have 50+ reviews and know your strongest selling points from guest feedback.</p>
+
+        <div class="callout">
+          <strong>Your best marketing channel is savvy travellers who Instagram the villa.</strong> Beautiful photography leads to organic UGC. These guests bring their network. A well-photographed pool and bathtub will be posted without you asking. That content reaches the exact audience most likely to book: people who already follow Bali travel accounts and are actively planning a trip.
+        </div>
+
+        <div class="label" style="margin-top: 16px;">What to do now (Months 2–3)</div>
+        <ul class="styled-list">
+          <li><strong>Professional photography first.</strong> Every organic post a guest makes starts with the villa looking its best. Invest in the shoot before anything else. Good photos drive organic UGC without any paid collaboration.</li>
+          <li><strong>Make it easy to post.</strong> Keep the villa looking exactly as it does in your best photos. Guests who are planning to share content notice the difference. A consistent, photogenic environment generates consistent posts.</li>
+          <li><strong>Repost with permission.</strong> When guests post, message them, thank them, and ask if you can repost. Build a library of real guest content. This is more valuable than any creator brief.</li>
+          <li><strong>Do not accept inbound influencer pitches.</strong> Every week a new villa opens in Canggu and receives 10–20 "collaboration" enquiries. These are costs, not opportunities. The villa's credibility comes from real guests, not creators who move on to the next property the following week.</li>
+        </ul>
+
+        <div class="callout-warning">
+          <strong>Revisit influencer strategy after 50+ reviews.</strong> Once you have a substantial review base and you know from guest feedback which features drive the most enthusiasm (the bathtub, the rice field view, the morning yoga), you will know exactly what to brief a creator on. Before that point, you do not have enough signal to brief well, and a poorly briefed collaboration produces content that does not convert.
+        </div>
+      </div>
+    </div>
+
+    <!-- P2.3 Schema -->
+    <div class="section" id="p2-schema">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P2.3 — Website Code Upgrades (Structured Data)</div>
+          <div class="card-number">Month 2–3</div>
+        </div>
+        <p><strong>Why this matters:</strong> "Structured data" is invisible code on the website that tells Google and AI tools exactly what the villa is: the number of bedrooms, the price, the rating, the location. Without it, Google has to guess. With it, Google can show richer results: star ratings, price ranges, and photo carousels that make the listing stand out. The website launches with the basics already built in. These are the upgrades to add once you have reviews and confirmed pricing.</p>
+
+        <ul class="styled-list">
+          <li><strong>Star ratings in Google:</strong> Once you have 5+ reviews on Google, add code that tells Google about the rating. This makes the star rating appear directly in search results, which dramatically increases click-through.</li>
+          <li><strong>Seasonal pricing display:</strong> Add code that tells Google about the low season, high season, and peak season rates. Google can then show price information directly in search results.</li>
+          <li><strong>Image tagging:</strong> Label the gallery images with descriptions and location data. This helps photos appear in Google Image search and AI-powered visual discovery.</li>
+          <li><strong>Promotion snippets:</strong> When running seasonal offers (early bird, wet season discount), add code that makes the promotion appear as a highlighted snippet in search results.</li>
+          <li><strong>Voice search readiness:</strong> Mark up key FAQ answers so that voice assistants (Siri, Google Assistant) and AI tools like ChatGPT can cite them directly.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P2.4 Nomad -->
+    <div class="section" id="p2-nomad">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P2.4 — Long-Term Rental Page</div>
+          <div class="card-number">Month 3</div>
+        </div>
+        <p>"Bali long term villa rental" is 1,300 monthly searches in AU at $0.69 CPC and 0.45 competition score. This is the lowest-competition significant term in the entire keyword set. No villa with a dedicated, well-optimised page for this term is likely to exist in the top 3 positions. The content gap is real and winnable.</p>
+
+        <ul class="styled-list">
+          <li>Dedicated URL: /long-term-stay/ or /monthly-rental/</li>
+          <li>Monthly rates (4-week minimum, 3-month minimum) clearly displayed</li>
+          <li>Specific nomad amenities: WiFi speed test results, nearest coworking spaces (distance + name), laptop-friendly workspaces in villa, pool for "recharge" breaks</li>
+          <li>Testimonial from a nomad guest (even one is powerful)</li>
+          <li>FAQ: visa situation, utility bills included, maid service frequency, WhatsApp concierge access for longer stays</li>
+          <li>Target secondary audience explicitly: include "remote work", "digital nomad", "work from Bali" in copy naturally</li>
+        </ul>
+
+        <div class="callout">
+          A 4-week booking at a lower nightly rate still generates more total revenue than 4 separate 7-night bookings, with zero changeover costs, lower OTA commission exposure, and a guest who is invested in the property's wellbeing. Long-stay guests are also the best review writers.
+        </div>
+      </div>
+    </div>
+
+    <!-- P2.5 Email -->
+    <div class="section" id="p2-email">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P2.5 — Email Capture and Nurture Sequence</div>
+          <div class="card-number">Month 3–4</div>
+        </div>
+        <p>OTAs own the guest relationship at discovery. Email capture creates a direct channel that bypasses OTA commission on repeat bookings. The mechanism is a high-value lead magnet, not a generic newsletter sign-up.</p>
+
+        <div class="two-col">
+          <div>
+            <div class="label">Lead Magnet</div>
+            <ul class="styled-list">
+              <li>"The Lumina Canggu Insider Guide" — a PDF covering restaurant picks, surf break conditions by month, transport tips, hidden spots, concierge favourites</li>
+              <li>Promoted on website, in OTA listing description, and via WhatsApp post-enquiry</li>
+              <li>Gated with email address only (no name required at this stage)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="label">Email Sequence</div>
+            <ul class="styled-list">
+              <li><strong>Pre-trip (3 emails):</strong> What to pack, airport transfer options, 48-hour arrival preparation checklist with villa specifics</li>
+              <li><strong>During stay:</strong> One email with concierge recommendations for the week</li>
+              <li><strong>Post-stay:</strong> Review request + "Book your next stay direct" offer with a small discount</li>
+              <li><strong>60-day follow-up:</strong> "Planning your next Bali trip?" with AU school holiday dates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== P3 ===================== -->
+    <div class="section" id="p3-scale">
+      <div class="priority-band p3">
+        <span class="priority-pill">P3</span>
+        <span class="priority-band-text"><strong>Scale — Months 4–8.</strong> With foundation in place and early content live, shift to competitive tactics: LLM visibility, link building, paid search, seasonal campaigns, and video content.</span>
+      </div>
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--p3); color: #fff;">3</div>
+        <div class="section-header-text">
+          <h2>P3: Scale</h2>
+          <p>Compete for visibility, build authority, and optimise the direct booking ratio.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3.1 LLM -->
+    <div class="section" id="p3-llm" style="margin-top: -24px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P3.1 — LLM/AEO Visibility</div>
+          <div class="card-number">Month 4+</div>
+        </div>
+        <p>AI assistants (ChatGPT, Gemini, Perplexity) are increasingly the first touchpoint in travel research. A traveller asking "best private pool villa in Canggu" in ChatGPT is at exactly the same stage as a traveller running that Google search. The citation mechanics differ but the intent is identical.</p>
+
+        <div class="label">Monitoring Setup</div>
+        <ul class="styled-list">
+          <li>Run the core 15–20 target queries monthly in ChatGPT and Gemini: "best villa in Canggu", "where to stay in Canggu Bali", "private pool villa Canggu", "3 bedroom villa Canggu Bali", "Canggu villa for families"</li>
+          <li>Record whether Lumina Villa is mentioned, whether it is cited with a URL, and what context surrounds the mention</li>
+          <li>Track the domains that ARE cited — these become link building and content gap targets</li>
+        </ul>
+
+        <div class="label" style="margin-top: 16px;">Citation Drivers</div>
+        <ul class="styled-list">
+          <li><strong>Structured FAQ content:</strong> Every page with a FAQ section in clean HTML (not JavaScript-rendered) has a citation probability advantage. LLMs index and cite structured Q&A content preferentially.</li>
+          <li><strong>Clean HTML rendering:</strong> No core content behind JS load events. The site's critical text must be present in the raw HTML response, not assembled client-side.</li>
+          <li><strong>Topical breadth:</strong> More content pages = more training signal. The 8-article content programme from P2 directly feeds LLM knowledge of "Lumina Villa" as a recognised entity.</li>
+          <li><strong>Third-party mentions:</strong> Directory listings, review platforms, and editorial blog mentions all contribute to the entity recognition that makes AI citation more likely.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P3.2 Links -->
+    <div class="section" id="p3-links">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P3.2 — Link Building</div>
+          <div class="card-number">Month 4–6</div>
+        </div>
+        <p><strong>Why links matter:</strong> Google partly decides which websites to show first based on how many other websites link to them. Think of each link as a vote of confidence. The directory listings from P1 provide the first links. This phase expands beyond directories into editorial mentions, partnerships, and travel content that naturally links back to the villa website.</p>
+
+        <div class="two-col">
+          <div>
+            <div class="label">Editorial Targets</div>
+            <ul class="styled-list">
+              <li>Travel blogs already ranking for Canggu terms (the-honeycombers.com, notable AU travel publications)</li>
+              <li>AU travel writers and bloggers covering "Bali family travel" or "Canggu guide" content</li>
+              <li>Guest posts on AU travel sites: the audience overlap with AU-primary market is direct value</li>
+              <li>PR angle: "rice field villa" is visually distinctive and photogenic. A pitch to a travel editor with the aerial drone shot is a real story.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="label">Local Partnership Links</div>
+            <ul class="styled-list">
+              <li>Yoga studios within 2km: mutual "recommended partners" links</li>
+              <li>Surf schools: referral arrangement with backlink exchange</li>
+              <li>Recommended restaurants and cafes: "Lumina recommends" on the concierge page links out; request reciprocal mention</li>
+              <li>Wedding photographers and planners who operate in Canggu (honeymoon segment crossover)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3.3 Paid -->
+    <div class="section" id="p3-paid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P3.3 — Paid Search (Selective)</div>
+          <div class="card-number">Month 5+</div>
+        </div>
+        <p>Paid search is not a P1 priority because the site does not yet have enough conversion infrastructure to make it efficient. By month 5, with reviews live, content published, and pricing visible, paid traffic will convert at a meaningful rate.</p>
+
+        <div class="callout-warning">
+          <strong>Key observation from search results analysis:</strong> "Canggu accommodation" is the only term showing paid ads in the search results. Direct villa operators are not running ads. This means the competitive intensity in paid search is lower than in organic. A small, tightly managed budget can capture high-intent queries with relatively low CPC.
+        </div>
+
+        <div class="label">Recommended Approach</div>
+        <ul class="styled-list">
+          <li><strong>Budget:</strong> Start small ($500–800 AUD/month). The goal is learning, not volume.</li>
+          <li><strong>Targeting:</strong> Australia only. Mobile-first bidding. Geo-targeting within AU: Sydney, Melbourne, Brisbane, Perth weighted by population + Bali travel propensity.</li>
+          <li><strong>Keywords (exact match only, 5–10 terms):</strong> "private pool villa canggu", "3 bedroom villa canggu", "canggu villa booking", "where to stay canggu", "luxury villa canggu bali"</li>
+          <li><strong>Landing page:</strong> Direct to the Book page with pricing visible, not the homepage</li>
+          <li><strong>Retargeting:</strong> Anyone who visits the site but does not submit a WhatsApp enquiry. Budget: $200 AUD/month retargeting layer. Ad creative: rice field aerial + "Your Canggu villa is waiting."</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P3.4 Seasonal -->
+    <div class="section" id="p3-seasonal">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P3.4 — Seasonal Campaign Calendar</div>
+          <div class="card-number">Ongoing</div>
+        </div>
+        <p>The AU market operates on a school holiday rhythm. Families make Bali decisions 6–10 weeks before departure for the major peaks. Content and offers need to be live before the booking window, not during it.</p>
+
+        <table class="dir-table">
+          <thead>
+            <tr>
+              <th>Season</th>
+              <th>Dates (AU School Holidays)</th>
+              <th>Booking Window Opens</th>
+              <th>Strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Easter / April</strong></td>
+              <td>Mid-April (~2 weeks)</td>
+              <td>Late February</td>
+              <td>Early bird offer. Family positioning. "Kids love the pool" creative.</td>
+            </tr>
+            <tr>
+              <td><strong>July (Peak)</strong></td>
+              <td>Late June – mid-July (~3 weeks)</td>
+              <td>Early May</td>
+              <td>Highest demand period. Full rate. Minimum 7-night stay. Do not discount.</td>
+            </tr>
+            <tr>
+              <td><strong>September / October</strong></td>
+              <td>Late September – early October (~2 weeks)</td>
+              <td>August</td>
+              <td>Couples and honeymooners peak (not school-age families). Bathtub + sunset creative.</td>
+            </tr>
+            <tr>
+              <td><strong>December / January (Peak)</strong></td>
+              <td>Mid-Dec – late Jan (~6 weeks)</td>
+              <td>Early October</td>
+              <td>Longest peak. Full rate. Family bookings. Early bird for Dec/Jan from October.</td>
+            </tr>
+            <tr>
+              <td><strong>Wet Season (Nov–Mar)</strong></td>
+              <td>n/a</td>
+              <td>Ongoing</td>
+              <td>Lower rates. Target "cheap bali villa" and last-minute bookers. Nomad monthly stays.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          Content published 6–8 weeks before peak school holiday periods should reference the upcoming peak explicitly: "Planning your July Bali trip?" earns higher click-through from families actively in the booking phase.
+        </div>
+      </div>
+    </div>
+
+    <!-- P3.5 Video -->
+    <div class="section" id="p3-video">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">P3.5 — Video Content, Instagram, TikTok &amp; Pinterest</div>
+          <div class="card-number">Month 6+</div>
+        </div>
+        <p>"Bali villa with rice field view" and related visual queries trigger video search results features. A rice field timelapse or villa walkthrough video ranks in Google Video carousels in a way that static content cannot.</p>
+
+        <div class="label">Video Content Priorities</div>
+        <ul class="styled-list">
+          <li><strong>Rice field timelapse (dawn to dusk):</strong> Highest visual impact. 60–90 seconds. Used on YouTube (indexed), Instagram Reels, TikTok, and the website. This is the single most shareable asset the property has.</li>
+          <li><strong>Villa walkthrough:</strong> 2–3 minute guided tour narrated as "arriving at the villa." This answers OTA browsers' biggest question ("is it as good as the photos?") before they ask it.</li>
+          <li><strong>Canggu neighbourhood guide (short-form):</strong> 30–60 second "5 things we love about Babakan Kubu" format. Reusable as Instagram Reel and TikTok. AU audience skews to Instagram over TikTok for travel planning.</li>
+        </ul>
+
+        <div class="label" style="margin-top: 16px;">Platform Strategy</div>
+        <ul class="styled-list">
+          <li><strong>Instagram:</strong> Primary owned social channel. Reels for reach, Stories for concierge personality, grid for brand aesthetic consistency.</li>
+          <li><strong>TikTok:</strong> Secondary. Useful for reach amplification but AU Bali travel audience converts less directly from TikTok. Use UGC content rather than investing in original TikTok production.</li>
+          <li><strong>Pinterest:</strong> Underestimated for Bali villa marketing. High-intent AU women planning Bali trips actively use Pinterest for visual research. Pin every blog article image, every villa photo, every recipe the concierge can arrange. Pinterest pins rank in Google Images and drive direct traffic months after being published.</li>
+          <li><strong>YouTube:</strong> Timelapse and walkthrough videos hosted here for Google indexability. YouTube is the second-largest search engine and Google shows YouTube videos in organic search results.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+          <div class="card-title">P3.6 — Competitive Monitoring</div>
+          <div class="card-number">Month 5+, Quarterly</div>
+        </div>
+        <ul class="styled-list">
+          <li>Track rankings monthly for the core 15 target keywords. Flag any position changes of 5+ places for investigation.</li>
+          <li>Monitor Elite Havens, Bali Villa Escapes, and Ametis Villa content output quarterly. If they publish a new guide or content cluster, identify the gap and respond within 30 days.</li>
+          <li>Quarterly search results feature audit: are new features (Hotels Pack, video carousels, AI Overviews) appearing for key terms? New features reshape the search results and require tactical response.</li>
+          <li>Track LLM responses monthly for the 10 highest-priority queries. Document which sources are cited and whether the list changes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GA4 Setup -->
+    <div class="section" id="kpis">
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--gold);">◈</div>
+        <div class="section-header-text">
+          <h2>Tracking Setup: Google Analytics 4</h2>
+          <p>One thing to set up before launch. Everything else flows from this.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p><strong>Why this matters:</strong> Without tracking, you are flying blind. You will not know how many people visited the website, where they came from (Google, Airbnb, Instagram, a friend's link), which pages they looked at, or whether they clicked the WhatsApp button. Every decision about what is working and what is not depends on this data existing.</p>
+        <p>Google Analytics 4 (GA4) is free and takes 15 minutes to install. It is the industry standard. Once it is running, it collects data automatically in the background. You do not need to check it every day, but when you want to know "is the website actually getting visitors?" or "did that Instagram post send anyone to the site?", the answer is there.</p>
+
+        <div class="label">What to set up</div>
+        <ul class="styled-list">
+          <li><strong>GA4 property:</strong> Create a GA4 property for luminavillabali.com. Add the tracking code to every page of the website. This is a one-time setup.</li>
+          <li><strong>WhatsApp click event:</strong> Track every time someone clicks the WhatsApp button. This is the closest thing to a "booking" metric the site has. Without this, you cannot measure whether the website is actually generating enquiries.</li>
+          <li><strong>Link the Google Business Profile:</strong> Connect GA4 to the GBP so you can see when someone found you on Google Maps and then visited the website.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>The only number that ultimately matters is occupancy.</strong> Are guests booking? Are they coming back? Are they telling friends? All the website metrics in the world are just a means to that end. But having the tracking in place means that when something works, you can see what it was and do more of it.
+        </div>
+
+        <div class="callout-warning" style="margin-top: 16px;">
+          <strong>Do this before launch, not after.</strong> Data only starts collecting from the moment the tracking code is installed. If you launch the website and add tracking two months later, those first two months of visitor data are gone forever. Install it on day one.
+        </div>
+      </div>
+    </div>
+
+    <!-- HOTEL MARKETING LEARNINGS -->
+    <div class="section" id="hotel-learnings">
+      <div class="section-header">
+        <div class="section-icon" style="background: var(--ink); color: var(--gold);">◆</div>
+        <div class="section-header-text">
+          <h2>Learnings from Hotel Marketing, Applied at Villa Scale</h2>
+          <p>Six principles drawn from large-scale hotel marketing that translate directly to a single-property operation.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p>Full-scale hotel marketing operations — properties managing millions of dollars in monthly revenue — have solved a set of problems that Lumina will face at a smaller scale. The principles are the same. The execution is simpler. Six of the most transferable learnings are documented below.</p>
+
+        <div class="callout">
+          <strong>The core translation:</strong> Hotels track every booking intent signal, run named seasonal offers, align spend to demand periods, measure what actually drives revenue, and use content to feed their commercial pages. Every one of these behaviours is available to a villa with a good website, GA4 set up correctly, and a clear seasonal calendar.
+        </div>
+      </div>
+
+      <!-- Learning 1: Booking Intent Tracking -->
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+          <div class="card-title">1. Track WhatsApp Clicks as Booking Intent Events</div>
+          <div class="card-number">P1 — Week 2</div>
+        </div>
+        <p>Large hotels track a specific event called a "booking intent" — the moment a user signals they want to reserve. For IHG Sydney, that event is a "book room search click." For Lumina, the equivalent is a WhatsApp button click. It is the moment a potential guest chooses to start a conversation about booking.</p>
+        <p>Every click is a signal. Tracked correctly, you can answer: which pages generate the most booking intent? Which CTAs convert? Does the inquiry rate change after adding the massage inclusion to the homepage? Without event tracking, these questions are unanswerable.</p>
+
+        <div class="label">GA4 Events to Set Up at Launch</div>
+        <ul class="styled-list">
+          <li><strong>WhatsApp button clicks:</strong> Track by page (homepage vs book page vs concierge page) and by position (header vs body vs footer CTA). Not all clicks are equal — a footer click from the blog is a different signal to a header click from the book page.</li>
+          <li><strong>Form submissions:</strong> If any contact or enquiry form exists, each submission is a conversion event.</li>
+          <li><strong>Phone number clicks:</strong> On mobile, a phone number tap is a booking intent signal. Track separately from WhatsApp.</li>
+          <li><strong>"Check availability" clicks:</strong> If the site has a calendar or availability widget, every interaction with it is a high-intent signal even if it does not end in a submission.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Monthly check:</strong> Which content pages are generating WhatsApp clicks? A blog article about "Canggu for families" that generates 12 WhatsApp clicks a month is a commercial asset, not just a traffic metric. Use this data to decide what to write next.
+        </div>
+      </div>
+
+      <!-- Learning 2: Named Offers -->
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+          <div class="card-title">2. Create Named Seasonal Packages</div>
+          <div class="card-number">P2 — Month 2</div>
+        </div>
+        <p>Hotels run named promotional offers rather than generic discounts. The name gives the offer identity, makes it shareable, and creates a reason for past guests to return. "Family Getaway" and "Warmer Way to Winter" are not just marketing copy — they are bookable products that guests recognise and return to. The same principle works at villa scale.</p>
+
+        <div class="label">Recommended Package Names for Lumina</div>
+        <ul class="styled-list">
+          <li><strong>"The Long Stay"</strong> — Monthly rate for digital nomads. Includes dedicated desk setup and a fast WiFi speed guarantee (state the actual speed). Positioned explicitly as: the best place to work from Bali without paying coworking cafe prices. Promoted in the P2 long-stay page and via digital nomad communities.</li>
+          <li><strong>"Family Week"</strong> — Pool toys set out before arrival, high chair and cot available, and a curated family-friendly restaurant list from the concierge. AU families do not want to think about logistics in Bali. This package signals that Lumina has already thought of it.</li>
+          <li><strong>"The Honeymoon"</strong> — Outdoor bath flower arrangement, private chef dinner, late checkout, celebration styling on arrival. The outdoor bathtub is a hero asset for this segment. Name the package. It makes it bookable, giftable, and searchable.</li>
+          <li><strong>"Surf & Stay"</strong> — Surf lessons and board rental included, positioned around Echo Beach proximity. Targets the active traveller segment that makes up a significant share of Canggu bookings. The inclusion removes a common booking friction (guests research surf access independently — this makes it a done deal).</li>
+        </ul>
+
+        <div class="callout-warning">
+          <strong>Promote them seasonally and track which ones generate WhatsApp clicks.</strong> The Family Week package should be most visible 6–8 weeks before AU school holidays. The Honeymoon package should be visible year-round with elevated spend in February and around Valentine's season. Named packages also give you a reason to email your list: "The Long Stay is now available for October" is a better email subject line than "Check our availability."
+        </div>
+      </div>
+
+      <!-- Learning 3: Seasonal Budget Alignment -->
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+          <div class="card-title">3. Align Content and Paid Spend to Demand Periods</div>
+          <div class="card-number">P3 — Month 5+</div>
+        </div>
+        <p>Hotel marketing teams shift budget to match demand windows — typically ramping 6–8 weeks before peak periods. Lumina has zero paid budget now, and organic content is the right first investment. But the same timing logic applies to both. Content published in the booking window is less useful than content published before it.</p>
+
+        <ul class="styled-list">
+          <li><strong>AU school holidays (Apr, Jul, Sep–Oct, Dec–Jan):</strong> Each peak has a booking window that opens 6–8 weeks prior. Content targeting "Canggu family villa" or "Bali in July with kids" needs to be published and indexed before that window opens, not during it.</li>
+          <li><strong>When P3 paid search starts:</strong> Increase budget 6–8 weeks before peak periods. The Family Week package should have its own landing page for Google Ads traffic, not the generic homepage.</li>
+          <li><strong>Season-specific content sections:</strong> Rather than updating the same page each season, create evergreen content anchored to seasons (e.g., "Bali in July: What to Expect") that ranks year-round and stays relevant on repeat.</li>
+        </ul>
+      </div>
+
+      <!-- Learning 4: Revenue Attribution -->
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+          <div class="card-title">4. Track Direct vs OTA Revenue, Not Just Bookings</div>
+          <div class="card-number">P1 Ongoing</div>
+        </div>
+        <p>Hotels measure their marketing performance as web-attributed revenue divided by spend. For a villa, the equivalent is simpler but equally important: direct enquiry revenue vs OTA-booked revenue, after commission. A booking is not a booking until you know what you actually kept.</p>
+
+        <table class="dir-table" style="margin-top: 12px;">
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>Revenue per booking</th>
+              <th>Commission</th>
+              <th>Net revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Direct (WhatsApp)</td>
+              <td>$1,000</td>
+              <td>0%</td>
+              <td><strong>$1,000</strong></td>
+            </tr>
+            <tr>
+              <td>Airbnb</td>
+              <td>$1,000</td>
+              <td>~15%</td>
+              <td><strong>$850</strong></td>
+            </tr>
+            <tr>
+              <td>Expedia</td>
+              <td>$1,000</td>
+              <td>~20–25%</td>
+              <td><strong>$750–800</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top: 14px; font-size: 0.9rem;">Track this monthly. The target is to shift from 30:70 (OTA:direct) at launch to 65:35 direct over 8 months. Every percentage point shift to direct is a margin gain with no additional revenue required. The entire P1–P3 strategy is the mechanism for making that shift happen.</p>
+
+        <div class="callout">
+          <strong>Practical monthly check:</strong> How many confirmed bookings came via direct WhatsApp? How many via OTA? What was the gross revenue from each? What was the net after commission? This takes 10 minutes a month and tells you whether the strategy is working at the number that actually matters.
+        </div>
+      </div>
+
+      <!-- Learning 5: GSC as Impression Share -->
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+          <div class="card-title">5. Use GSC Impressions as Your Impression Share Signal</div>
+          <div class="card-number">P2 Ongoing</div>
+        </div>
+        <p>Hotel marketing teams monitor "budget-lost impression share" in Google Ads — the percentage of available search volume they are missing because their budget ran out or their quality score is too low. It tells them where the growth ceiling is and when to scale. The organic equivalent for a villa is Google Search Console impressions.</p>
+
+        <ul class="styled-list">
+          <li><strong>If impressions are high but CTR is low:</strong> The page is showing up but the title and meta description are not compelling enough to earn the click. Rewrite the title tag to be more specific or add a stronger hook.</li>
+          <li><strong>If impressions are low or zero for a target keyword:</strong> The content does not exist, is too thin, or is not indexed. This is the content gap signal. Publish or improve the page.</li>
+          <li><strong>If ranking position is 11–20:</strong> The content is close to page one but not there yet. Internal links from other pages, a schema update, or a content expansion can push it over.</li>
+        </ul>
+
+        <div class="callout">
+          GSC is free and live from the moment the site is verified. Check it monthly from P1 onwards. The impressions data is your earliest signal that content is working — it appears before rankings and before traffic clicks through.
+        </div>
+      </div>
+
+      <!-- Learning 6: Content Drives Commercial -->
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-header">
+          <div class="card-title">6. Every Content Piece Needs a Commercial Pathway</div>
+          <div class="card-number">P2 — Ongoing</div>
+        </div>
+        <p>Hotel content teams have learned that blog articles and destination guides do not drive revenue on their own. They drive revenue when every piece has a clear internal link to a commercial page. A "Sydney Things to Do" article that does not link to the hotel's location page is a dead end. The same logic applies at villa scale.</p>
+
+        <ul class="styled-list">
+          <li><strong>"Where to Stay in Canggu" guide:</strong> Every section referencing the Babakan Kubu neighbourhood links to the villa homepage or book page. The article earns the organic traffic. The internal link converts a fraction of it.</li>
+          <li><strong>"Things to Do in Canggu" guide:</strong> Links to the concierge page, where those same activities (surf lessons, private chef, yoga) can be arranged through the villa. The article earns search visibility. The concierge page closes the enquiry.</li>
+          <li><strong>"Canggu for Families" article:</strong> Links directly to the Family Week package section and the book page. The reader has self-identified as the target guest. Give them the most direct path to booking.</li>
+          <li><strong>Every blog article footer:</strong> A consistent "Ready to book?" CTA block with the WhatsApp link. Do not make organic visitors hunt for how to enquire.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>The rule:</strong> Before publishing any content piece, answer the question: what does a reader who wants to book do next? If the answer requires more than one click or is unclear, add an internal link or CTA block before publishing. Content without a commercial pathway is a traffic metric that does not convert.
+        </div>
+      </div>
+
+    </div><!-- /hotel-learnings -->
+
+  </div><!-- /container -->
+</div><!-- /main -->
+
+<!-- APPENDIX -->
+<div class="appendix" id="appendix">
+  <div class="appendix-inner">
+    <h2>Appendix: Research Data Summary</h2>
+    <p>This strategy is built on a structured research programme completed prior to document production. The following data sets informed every recommendation above.</p>
+
+    <div class="appendix-grid">
+      <div class="appendix-stat">
+        <div class="appendix-stat-num">321</div>
+        <div class="appendix-stat-label">Keywords analysed across Canggu villa and Bali accommodation clusters</div>
+      </div>
+      <div class="appendix-stat">
+        <div class="appendix-stat-num">77</div>
+        <div class="appendix-stat-label">Unique "People Also Ask" questions collected from Google</div>
+      </div>
+      <div class="appendix-stat">
+        <div class="appendix-stat-num">8</div>
+        <div class="appendix-stat-label">Google search result pages analysed across target keyword sets</div>
+      </div>
+      <div class="appendix-stat">
+        <div class="appendix-stat-num">6+</div>
+        <div class="appendix-stat-label">Competitor profiles analysed in depth (Elite Havens deep dive)</div>
+      </div>
+    </div>
+
+    <p><strong style="color: var(--gold);">Research scope breakdown:</strong> The 77 PAA questions break down as: 26 location questions (where to stay, area comparisons), 25 activity questions (what to do, surf/food/nightlife), 10 villa questions (worth it, features, private vs resort), and 10 booking/trust questions (how to book, safety, reviews). The Elite Havens competitive deep dive revealed 43 editorial pages, 2,909 AU keywords, domain rank 386, and a managed villa network backlink strategy that underpins their authority. Full keyword data and search results screenshots available on request.</p>
+
+    <p><strong style="color: var(--gold);">Data currency:</strong> All keyword volumes, CPC data, and search results compositions are from June 2026. Google search results change regularly. Re-check target searches quarterly.</p>
+
+    <p style="color: rgba(247,243,234,0.5); font-size: 0.8rem; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">This document is confidential and prepared for Lumina Villa Canggu. Strategy framework prepared June 2026. Review and update at each phase transition (Week 4, Month 4, Month 8).</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">
+    <div class="footer-brand">Lumina Villa Canggu</div>
+    Digital Marketing Strategy P1–P3
+  </div>
+  <div class="footer-right">
+    luminavillabali.com<br>
+    Prepared June 2026 · Confidential
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map Component Test — Lumina Villa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset + base ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #13162B;
+      --ink2:     #1B2040;
+      --gold:     #C9A227;
+      --gold-soft:#DFC472;
+      --bone:     #F7F3EA;
+      --text:     #2B2A2E;
+      --text-soft:#5C5A60;
+      --display:  "Fraunces", Georgia, serif;
+      --body:     "Inter", -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--body);
+      background: var(--ink);
+      color: var(--bone);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page shell ──────────────────────────────────────────── */
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Page header ─────────────────────────────────────────── */
+    .page-header {
+      margin-bottom: 40px;
+    }
+
+    .page-header__eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .page-header__title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .page-header__sub {
+      font-size: 0.88rem;
+      color: rgba(239,233,220,0.55);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    .page-header__divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--gold-soft));
+      border-radius: 2px;
+      margin: 20px 0;
+      opacity: 0.7;
+    }
+
+    /* ── Map section ─────────────────────────────────────────── */
+    .map-section {
+      margin-bottom: 56px;
+    }
+
+    .map-section__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(239,233,220,0.35);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    #map-container {
+      /* LuminaMap.init() targets this element */
+    }
+
+    /* ── Usage callout ───────────────────────────────────────── */
+    .usage-block {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,162,39,0.2);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .usage-block__title {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .usage-block__code {
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      color: rgba(239,233,220,0.75);
+      background: rgba(0,0,0,0.3);
+      border-radius: 8px;
+      padding: 14px 18px;
+      overflow-x: auto;
+      line-height: 1.7;
+      white-space: pre;
+    }
+
+    /* ── Demo controls ───────────────────────────────────────── */
+    .demo-controls {
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .demo-controls__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(239,233,220,0.35);
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .demo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(201,162,39,0.3);
+      background: rgba(201,162,39,0.08);
+      color: var(--gold-soft);
+      font-family: var(--body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .demo-btn:hover {
+      background: rgba(201,162,39,0.18);
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .demo-btn svg {
+      opacity: 0.6;
+    }
+
+    /* ── Context note ────────────────────────────────────────── */
+    .context-note {
+      margin-top: 20px;
+      padding: 18px 22px;
+      background: rgba(75,163,199,0.08);
+      border-left: 3px solid rgba(75,163,199,0.5);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.8rem;
+      color: rgba(239,233,220,0.6);
+      line-height: 1.6;
+    }
+
+    .context-note strong {
+      color: rgba(239,233,220,0.9);
+      font-weight: 600;
+    }
+
+    /* ── POI list (reference) ────────────────────────────────── */
+    .poi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .poi-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .poi-item:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(201,162,39,0.25);
+    }
+
+    .poi-item__dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .poi-item__name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(239,233,220,0.85);
+      margin-bottom: 2px;
+    }
+
+    .poi-item__meta {
+      font-size: 0.7rem;
+      color: rgba(239,233,220,0.4);
+    }
+
+    /* ── Section heading ─────────────────────────────────────── */
+    .section-heading {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: rgba(239,233,220,0.8);
+      margin-bottom: 4px;
+    }
+
+    .section-sub {
+      font-size: 0.78rem;
+      color: rgba(239,233,220,0.35);
+      margin-bottom: 20px;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .page-wrap { padding: 32px 16px 60px; }
+      .usage-block { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrap">
+
+    <!-- Page header -->
+    <header class="page-header">
+      <span class="page-header__eyebrow">Component Preview</span>
+      <h1 class="page-header__title">Neighbourhood Map</h1>
+      <div class="page-header__divider"></div>
+      <p class="page-header__sub">
+        Custom illustrated interactive map for the Lumina Villa location page.
+        No external dependencies. Click any pin to see details. Use the category
+        filters to show or hide point types.
+      </p>
+    </header>
+
+    <!-- Demo controls -->
+    <div class="demo-controls">
+      <span class="demo-controls__label">Jump to pin:</span>
+      <button class="demo-btn" onclick="mapInstance.showPoi('lumina')">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#C9A227" stroke-width="1.5"/></svg>
+        Lumina Villa
+      </button>
+      <button class="demo-btn" onclick="mapInstance.showPoi('tanah-lot')">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#C9A227" stroke-width="1.5"/></svg>
+        Tanah Lot
+      </button>
+      <button class="demo-btn" onclick="mapInstance.showPoi('echo-beach')">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#4BA3C7" stroke-width="1.5"/></svg>
+        Echo Beach
+      </button>
+      <button class="demo-btn" onclick="mapInstance.showPoi('finns')">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#D4557A" stroke-width="1.5"/></svg>
+        Finns Beach Club
+      </button>
+      <button class="demo-btn" onclick="mapInstance.showPoi('the-practice')">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#9B6FBE" stroke-width="1.5"/></svg>
+        The Practice
+      </button>
+      <button class="demo-btn" onclick="mapInstance.showPoi('airport')">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#8A8FA8" stroke-width="1.5"/></svg>
+        Airport
+      </button>
+    </div>
+
+    <!-- Map -->
+    <div class="map-section">
+      <span class="map-section__label">Interactive map — click any pin</span>
+      <div id="map-container"></div>
+    </div>
+
+    <!-- Context note -->
+    <div class="context-note">
+      <strong>The core message:</strong> Lumina Villa sits in Babakan Kubu — the quiet, rice-field
+      edge of Canggu. Every surf break, beach club, yoga studio and good cafe is visible on the map
+      and reachable within 5–10 minutes. The villa is in the noise-free zone. Everything fun is a
+      short scooter ride south or west.
+    </div>
+
+    <!-- Usage instructions -->
+    <div class="usage-block" style="margin-top: 40px;">
+      <div class="usage-block__title">Embed in location.html</div>
+      <div class="usage-block__code"><!-- 1. Add a container div anywhere on the page -->
+&lt;div id="neighbourhood-map"&gt;&lt;/div&gt;
+
+<!-- 2. Load the script before </body> -->
+&lt;script src="js/map.js"&gt;&lt;/script&gt;
+
+<!-- 3. Initialise -->
+&lt;script&gt;
+  LuminaMap.init('neighbourhood-map');
+&lt;/script&gt;</div>
+    </div>
+
+    <!-- POI reference list -->
+    <section>
+      <h2 class="section-heading">All Points of Interest</h2>
+      <p class="section-sub">Click any item to open it on the map above.</p>
+      <div class="poi-grid" id="poi-list"></div>
+    </section>
+
+  </div><!-- /page-wrap -->
+
+  <!-- Load the map component -->
+  <script src="js/map.js"></script>
+  <script>
+    // Initialise the map
+    const mapInstance = LuminaMap.init('map-container');
+
+    // Build POI reference list
+    const catMap = {};
+    LuminaMap.CATEGORIES.forEach(c => { catMap[c.id] = c; });
+
+    const listEl = document.getElementById('poi-list');
+    LuminaMap.POIS.forEach(poi => {
+      const cat  = catMap[poi.category];
+      const item = document.createElement('div');
+      item.className = 'poi-item';
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('aria-label', 'Show ' + poi.name + ' on map');
+      item.innerHTML = `
+        <span class="poi-item__dot" style="background:${cat.color}"></span>
+        <div>
+          <div class="poi-item__name">${poi.name}</div>
+          <div class="poi-item__meta">${cat.label} &middot; ${poi.distance}</div>
+        </div>`;
+
+      function activate() { mapInstance.showPoi(poi.id); }
+      item.addEventListener('click', activate);
+      item.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+      });
+
+      listEl.appendChild(item);
+    });
+  </script>
+
+</body>
+</html>
